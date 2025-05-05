@@ -33,7 +33,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p>hirushi.emeshika@gmail.com</p>
+                    <p>hello@emeshika.com</p>
                   </div>
                 </CardContent>
               </Card>

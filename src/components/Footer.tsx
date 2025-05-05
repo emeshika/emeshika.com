@@ -33,9 +33,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-muted-foreground">Sri Lanka Institute of Information Technology</li>
+              <li className="text-muted-foreground">------</li>
               <li className="text-muted-foreground">Colombo, Sri Lanka</li>
-              <li className="text-web3-primary">hirushi.emeshika@gmail.com</li>
+              <li className="text-web3-primary">hello@emeshika.com</li>
             </ul>
           </div>
         </div>
@@ -45,7 +45,7 @@ const Footer = () => {
             © {currentYear} Hirushi Emeshika. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground mt-2 md:mt-0">
-            Designed with modern web3 interface
+            
           </p>
         </div>
       </div>
