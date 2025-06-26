@@ -20,7 +20,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 w-full py-4 px-6 md:px-12 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 w-full py-2 px-6 md:px-12 transition-all duration-300 ${
       isScrolled 
         ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-lg' 
         : 'bg-transparent'
@@ -43,7 +43,7 @@ const Navbar = () => {
             Notes
           </a>
           <Link to="/blog" className="web3-link">Blog</Link>
-          <Button variant="outline" className="border-web3-primary text-web3-primary hover:bg-web3-primary hover:text-white transition-colors duration-300">
+          <Button variant="outline" size="sm" className="border-web3-primary text-web3-primary hover:bg-web3-primary hover:text-white transition-colors duration-300">
             <Link to="/contact">Get in Touch</Link>
           </Button>
         </div>
