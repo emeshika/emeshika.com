@@ -97,34 +97,34 @@ const HeroSection = () => {
       <div className="absolute bottom-20 left-20 w-72 h-72 bg-web3-secondary/20 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 md:px-12 z-10 relative">
-        <div className="flex flex-col md:flex-row items-center gap-8 max-w-3xl animate-fade-in">
-          <div className="flex flex-col gap-6 md:order-1 w-full">
-            <div className="backdrop-blur-lg bg-black/40 border border-white/10 rounded-xl p-6 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]">
-              <h1 className="text-4xl md:text-6xl font-bold text-center md:text-left">
-                Hi, I'm <span className="text-gradient">Hirushi Emeshika</span>
-              </h1>
-              <p className="text-xl md:text-xl text-muted-foreground leading-relaxed text-center md:text-left mt-4">
-                @emeshika <br/>
-                Undergraduate | Data Scientist | ML & AI | Enthusiast</p><br/>
-                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed text-center md:text-left mt-4">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full mx-auto animate-fade-in">
+          {/* Introduction Box */}
+          <div className="backdrop-blur-lg bg-black/40 border border-white/10 rounded-xl p-4 md:p-8 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)] w-full max-w-5xl mb-8 md:mb-0">
+            <h1 className="text-3xl md:text-6xl font-bold text-center md:text-left">
+              Hi, I'm <span className="text-gradient">Hirushi Emeshika</span>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-center md:text-left mt-4">
+              @emeshika <br/>
+              Undergraduate | Data Scientist | ML & AI | Enthusiast
+            </p>
+            <p className="text-lg md:text-2xl text-muted-foreground leading-relaxed text-center md:text-left mt-4">
               Aspiring Data Scientist at SLIIT, combining coding, statistics, and machine learning to unlock insights from data, with a strong interest in AI, and data visualization.
-              </p>
-            </div>
+            </p>
           </div>
-        </div>
-        {/* Avatar absolute on desktop, centered on mobile */}
-        <div className="flex justify-center mt-8 md:mt-0 md:block md:absolute md:top-1/2 md:right-12 md:-translate-y-1/2">
-          <div className="relative">
-            <div className="absolute -inset-4 rounded-full bg-web3-gradient opacity-50 blur-lg"></div>
-            <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-full p-1">
-              <Avatar className="w-96 h-96 border-4 border-background">
-                <AvatarImage 
-                  src="/lovable-uploads/a943d65f-9f53-4099-b8ad-c7bada0fc95b.png"
-                  alt="Hirushi Emeshika"
-                  className="object-cover"
-                />
-                <AvatarFallback>HE</AvatarFallback>
-              </Avatar>
+          {/* Avatar on the right */}
+          <div className="flex justify-center md:justify-end w-full md:w-auto mt-8 md:mt-0">
+            <div className="relative">
+              <div className="absolute -inset-4 rounded-full bg-web3-gradient opacity-50 blur-lg"></div>
+              <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-full p-1">
+                <Avatar className="w-60 h-60 md:w-96 md:h-96 border-4 border-background">
+                  <AvatarImage 
+                    src="/lovable-uploads/a943d65f-9f53-4099-b8ad-c7bada0fc95b.png"
+                    alt="Hirushi Emeshika"
+                    className="object-cover"
+                  />
+                  <AvatarFallback>HE</AvatarFallback>
+                </Avatar>
+              </div>
             </div>
           </div>
         </div>

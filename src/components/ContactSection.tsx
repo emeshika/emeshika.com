@@ -18,8 +18,8 @@ const ContactSection = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-semibold mb-4">Let's Connect</h3>
-            <p className="text-muted-foreground mb-8">
+            <h3 className="text-2xl font-semibold mb-4 text-center lg:text-left">Let's Connect</h3>
+            <p className="text-muted-foreground mb-8 text-center lg:text-left">
              Whether you're looking to collaborate on a data-driven project, explore ideas in AI or machine learning, or just have a conversation about analytics and emerging technologies, I'd love to connect. 
              I'm always open to meaningful discussions, knowledge sharing, and embracing new challenges that drive innovation and impact.<br/><br/>
              Feel free to reach out — let's create something insightful and transformative together!
@@ -29,24 +29,24 @@ const ContactSection = () => {
               <Card className="bg-muted border-none">
                 <CardContent className="flex flex-col gap-4 p-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-web3-primary/20 rounded-full flex items-center justify-center">
-                      <Mail className="text-web3-primary" size={20} />
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-web3-primary/20 rounded-full flex items-center justify-center">
+                      <Mail className="text-web3-primary" size={18} />
                     </div>
-                    <a href="mailto:emeshi.h@gmail.com" className="text-base hover:underline" target="_blank" rel="noopener noreferrer">emeshi.h@gmail.com</a>
+                    <a href="mailto:emeshi.h@gmail.com" className="text-base break-all hover:underline" target="_blank" rel="noopener noreferrer">emeshi.h@gmail.com</a>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-web3-primary/20 rounded-full flex items-center justify-center">
-                      <Github className="text-web3-primary" size={20} />
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-web3-primary/20 rounded-full flex items-center justify-center">
+                      <Github className="text-web3-primary" size={18} />
                     </div>
-                    <a href="https://github.com/emeshika" className="text-base hover:underline" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/emeshika" className="text-base break-all hover:underline" target="_blank" rel="noopener noreferrer">
                       github.com/emeshika
                     </a>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-web3-primary/20 rounded-full flex items-center justify-center">
-                      <Linkedin className="text-web3-primary" size={20} />
+                    <div className="w-8 h-8 md:w-10 md:h-10 bg-web3-primary/20 rounded-full flex items-center justify-center">
+                      <Linkedin className="text-web3-primary" size={18} />
                     </div>
-                    <a href="https://www.linkedin.com/in/hirushiemeshika" className="text-base hover:underline" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/hirushiemeshika" className="text-base break-all hover:underline" target="_blank" rel="noopener noreferrer">
                       linkedin.com/in/hirushiemeshika
                     </a>
                   </div>
@@ -63,7 +63,7 @@ const ContactSection = () => {
                   <Input 
                     id="name"
                     placeholder="Your Name"
-                    className="bg-muted border-none focus-visible:ring-web3-primary"
+                    className="bg-muted border-none focus-visible:ring-web3-primary w-full"
                   />
                 </div>
                 <div className="space-y-2">
@@ -71,7 +71,7 @@ const ContactSection = () => {
                   <Input 
                     id="email"
                     placeholder="Your Email"
-                    className="bg-muted border-none focus-visible:ring-web3-primary"
+                    className="bg-muted border-none focus-visible:ring-web3-primary w-full"
                   />
                 </div>
               </div>
@@ -80,7 +80,7 @@ const ContactSection = () => {
                 <Input 
                   id="subject"
                   placeholder="Subject"
-                  className="bg-muted border-none focus-visible:ring-web3-primary"
+                  className="bg-muted border-none focus-visible:ring-web3-primary w-full"
                 />
               </div>
               <div className="space-y-2">
@@ -89,7 +89,7 @@ const ContactSection = () => {
                   id="message"
                   placeholder="Your Message"
                   rows={6}
-                  className="bg-muted border-none focus-visible:ring-web3-primary resize-none"
+                  className="bg-muted border-none focus-visible:ring-web3-primary resize-none w-full"
                 />
               </div>
               <Button className="w-full bg-web3-primary hover:bg-web3-primary/80 text-white">
