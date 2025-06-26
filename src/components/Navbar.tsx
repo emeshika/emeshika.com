@@ -90,6 +90,13 @@ const Navbar = () => {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="fixed top-0 left-0 w-screen h-screen bg-black z-[9999] pt-20 flex flex-col items-center justify-center">
+          <button
+            className="absolute top-6 right-6 text-white text-3xl focus:outline-none"
+            onClick={toggleMenu}
+            aria-label="Close menu"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
           <div className="flex flex-col items-center gap-8 p-8 w-full">
             <button onClick={() => scrollToSection('about')} className="text-2xl font-semibold text-white">About</button>
             <button onClick={() => scrollToSection('projects')} className="text-2xl font-semibold text-white">Projects</button>
