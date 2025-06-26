@@ -57,7 +57,6 @@ const Navbar = () => {
           >
             Blog
           </a>
-          <button className="web3-link" onClick={() => scrollToSection('feedback')}>Feedback</button>
           <button
             onClick={() => scrollToSection('contact')}
             className="web3-link"
@@ -102,7 +101,6 @@ const Navbar = () => {
             >
               Blog
             </a>
-            <button className="text-xl" onClick={() => scrollToSection('feedback')}>Feedback</button>
             <button
               onClick={() => scrollToSection('contact')}
               className="text-xl"

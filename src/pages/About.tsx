@@ -36,22 +36,23 @@ const About = () => {
               
               <div className="space-y-6">
                 <p className="text-lg">
-                  Hello! I'm Hirushi Emeshika, a dedicated Data Science undergraduate at Sri Lanka Institute 
-                  of Information Technology (SLIIT). My passion lies in extracting meaningful insights from 
-                  data and developing solutions that make a real-world impact.
+                  Hello! I'm Hirushi Emeshika, a dedicated and enthusiastic Data Science undergraduate at the Sri Lanka Institute of Information Technology (SLIIT). 
+                  I am deeply passionate about uncovering patterns in data, extracting actionable insights, and developing intelligent solutions that make a real-world impact.
                 </p>
                 
                 <p className="text-lg">
-                  As a student specializing in data science, I've developed skills in statistical analysis, 
-                  machine learning algorithms, data visualization, and programming. I enjoy tackling complex 
-                  problems through data-driven approaches and creating intuitive visualizations that communicate 
-                  insights effectively.
+                  With a strong foundation in statistical analysis, machine learning, data visualization, and programming, I thrive on solving complex, data-driven problems. 
+                  I enjoy turning raw, unstructured data into clear, valuable narratives through intuitive visualizations and models that speak to both technical and non-technical audiences.
                 </p>
-                
+
                 <p className="text-lg">
-                  My academic journey at SLIIT has provided me with both theoretical knowledge and hands-on 
-                  experience through various projects. I believe in continuous learning and staying updated 
-                  with the latest developments in this rapidly evolving field.
+                  Throughout my academic journey, I have engaged in a variety of hands-on projects — from developing full-stack applications to implementing machine 
+                  learning pipelines — which have strengthened my practical skills and reinforced my commitment to real-world problem solving.
+                </p>
+
+                <p className="text-lg">
+                  I'm always eager to explore emerging technologies in AI, big data, and analytics, and I believe in lifelong learning to stay ahead in this fast-evolving field. 
+                  Whether working independently or collaborating within a team, I bring creativity, curiosity, and a problem-solving mindset to every challenge I tackle
                 </p>
                 
                 <div className="pt-4">

@@ -10,24 +10,24 @@ import { Link } from 'react-router-dom';
 const projects = [
   {
     id: 1,
-    title: "Predictive Analysis System",
-    description: "A machine learning model that predicts student performance based on various factors and historical data.",
-    tags: ["Python", "Scikit-Learn", "Data Analysis"],
-    link: "/projects/predictive-analysis"
+    title: "Caregiver Management System",
+    description: "A full-stack web application designed to streamline caregiver scheduling, payments, and client management. This system allows users to register caregivers, manage appointments, and track payments securely. It features user authentication, refund management, and a dynamic dashboard for admin users.",
+    tags: ["React.js", "Express.js", "MongoDB"],
+    link: "https://github.com/emeshika/CaregiverManagementSystem"
   },
   {
     id: 2,
-    title: "Data Visualization Dashboard",
-    description: "Interactive dashboard for visualizing complex datasets with customizable charts and filters.",
-    tags: ["React", "D3.js", "Tableau"],
-    link: "/projects/dashboard"
+    title: "BudgetBuddy - Personal Finance Tracker (Mobile App)",
+    description: "An Android mobile app developed in Kotlin that helps users track income, expenses, and budgets. Features include transaction categorization, dynamic pie charts, monthly budget setup, and alerts when nearing budget limits. It stores data locally using SharedPreferences and supports data export/import functionality.",
+    tags: ["Kotlin", "Android", "Mobile Development"],
+    link: "https://github.com/emeshika/FinanceTrackerApp"
   },
   {
     id: 3,
-    title: "Sentiment Analysis Tool",
-    description: "NLP-based tool that analyzes sentiment from social media data to extract insights on public opinion.",
-    tags: ["NLP", "Python", "NLTK"],
-    link: "/projects/sentiment-analysis"
+    title: "Online Ticket Booking System",
+    description: "A web-based solution for booking movie or event tickets with real-time seat availability. Users can register, browse shows, select seats, and make payments. The system ensures a smooth and user-friendly ticketing experience, integrating validations and confirmation receipts.",
+    tags: ["PHP", "MySQL", "Bootstrap"],
+    link: "https://github.com/emeshika/BookingTickets"
   }
 ];
 
@@ -75,7 +75,7 @@ const ProjectsSection = () => {
         
         <div className="flex justify-center mt-12">
           <Button variant="outline" className="glass-morphism border-web3-primary text-web3-primary hover:bg-web3-primary/20 hover:text-web3-primary">
-            <Link to="/projects" className="flex items-center gap-2">
+            <Link to="https://github.com/emeshika" className="flex items-center gap-2">
               View All Projects <ArrowRight size={16} />
             </Link>
           </Button>

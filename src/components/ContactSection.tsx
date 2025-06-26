@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Github, Linkedin, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -21,34 +20,38 @@ const ContactSection = () => {
           <div>
             <h3 className="text-2xl font-semibold mb-4">Let's Connect</h3>
             <p className="text-muted-foreground mb-8">
-              I'm always open to discussing data science projects, research opportunities, 
-              or potential collaborations. Feel free to reach out!
+             Whether you're looking to collaborate on a data-driven project, explore ideas in AI or machine learning, or just have a conversation about analytics and emerging technologies, I'd love to connect. 
+             I'm always open to meaningful discussions, knowledge sharing, and embracing new challenges that drive innovation and impact.<br/><br/>
+             Feel free to reach out — let's create something insightful and transformative together!
             </p>
             
             <div className="space-y-4">
               <Card className="bg-muted border-none">
-                <CardContent className="flex items-center gap-4 p-4">
-                  <div className="w-10 h-10 bg-web3-primary/20 rounded-full flex items-center justify-center">
-                    <Mail className="text-web3-primary" size={20} />
+                <CardContent className="flex flex-col gap-4 p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-web3-primary/20 rounded-full flex items-center justify-center">
+                      <Mail className="text-web3-primary" size={20} />
+                    </div>
+                    <a href="mailto:emeshi.h@gmail.com" className="text-base hover:underline" target="_blank" rel="noopener noreferrer">emeshi.h@gmail.com</a>
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Email</p>
-                    <p>hello@emeshika.com</p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-web3-primary/20 rounded-full flex items-center justify-center">
+                      <Github className="text-web3-primary" size={20} />
+                    </div>
+                    <a href="https://github.com/emeshika" className="text-base hover:underline" target="_blank" rel="noopener noreferrer">
+                      github.com/emeshika
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-web3-primary/20 rounded-full flex items-center justify-center">
+                      <Linkedin className="text-web3-primary" size={20} />
+                    </div>
+                    <a href="https://www.linkedin.com/in/hirushiemeshika" className="text-base hover:underline" target="_blank" rel="noopener noreferrer">
+                      linkedin.com/in/hirushiemeshika
+                    </a>
                   </div>
                 </CardContent>
               </Card>
-              
-              <div className="flex flex-wrap gap-4">
-                <Button variant="outline" size="icon" className="rounded-full h-12 w-12 border-web3-primary text-web3-primary hover:bg-web3-primary hover:text-white">
-                  <Github size={20} />
-                </Button>
-                <Button variant="outline" size="icon" className="rounded-full h-12 w-12 border-web3-primary text-web3-primary hover:bg-web3-primary hover:text-white">
-                  <Linkedin size={20} />
-                </Button>
-                <Button variant="outline" size="icon" className="rounded-full h-12 w-12 border-web3-primary text-web3-primary hover:bg-web3-primary hover:text-white">
-                  <Twitter size={20} />
-                </Button>
-              </div>
             </div>
           </div>
           

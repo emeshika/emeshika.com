@@ -21,17 +21,23 @@ const AboutSection = () => {
         <div className="flex justify-center">
           <div className="glass-morphism rounded-xl p-8 md:p-12 w-full max-w-7xl space-y-6">
             <p className="text-lg">
-              Hello! I'm Hirushi Emeshika, a dedicated Data Science undergraduate at the Sri Lanka Institute of Information Technology (SLIIT). 
-              I'm passionate about transforming raw data into meaningful insights and building solutions that create real-world impact.
+              Hello! I'm Hirushi Emeshika, a dedicated and enthusiastic Data Science undergraduate at the Sri Lanka Institute of Information Technology (SLIIT). 
+              I am deeply passionate about uncovering patterns in data, extracting actionable insights, and developing intelligent solutions that make a real-world impact.
             </p>
             <p className="text-lg">
-              As a student specializing in Data Science, I've cultivated strong skills in statistical analysis, machine learning, data visualization, and programming. 
-              I enjoy solving complex challenges through data-driven approaches and crafting intuitive visualizations that communicate insights clearly and effectively.
-            </p>
-            <p className="text-lg">
-              My academic journey at SLIIT has equipped me with both solid theoretical foundations and hands-on experience through diverse, real-world projects. 
-              I'm committed to continuous learning and staying current with the latest trends in AI, analytics, and emerging technologies.
-            </p>
+                  With a strong foundation in statistical analysis, machine learning, data visualization, and programming, I thrive on solving complex, data-driven problems. 
+                  I enjoy turning raw, unstructured data into clear, valuable narratives through intuitive visualizations and models that speak to both technical and non-technical audiences.
+                </p>
+
+                <p className="text-lg">
+                  Throughout my academic journey, I have engaged in a variety of hands-on projects — from developing full-stack applications to implementing machine 
+                  learning pipelines — which have strengthened my practical skills and reinforced my commitment to real-world problem solving.
+                </p>
+
+                <p className="text-lg">
+                  I'm always eager to explore emerging technologies in AI, big data, and analytics, and I believe in lifelong learning to stay ahead in this fast-evolving field. 
+                  Whether working independently or collaborating within a team, I bring creativity, curiosity, and a problem-solving mindset to every challenge I tackle
+                </p>
           </div>
         </div>
         
@@ -42,7 +48,7 @@ const AboutSection = () => {
                 <User className="text-web3-primary" size={24} />
               </div>
               <h3 className="text-lg font-semibold mb-2">Background</h3>
-              <p className="text-muted-foreground">SLIIT University, specializing in Data Science</p>
+              <p className="text-muted-foreground">Data Science undergraduate at the Sri Lanka Institute of Information Technology (SLIIT).</p>
             </CardContent>
           </Card>
           
@@ -52,7 +58,7 @@ const AboutSection = () => {
                 <Book className="text-web3-primary" size={24} />
               </div>
               <h3 className="text-lg font-semibold mb-2">Education</h3>
-              <p className="text-muted-foreground">Undergraduate in Data Science</p>
+              <p className="text-muted-foreground">BSc (Hons) specializing in Data Science.</p>
             </CardContent>
           </Card>
           
@@ -73,7 +79,6 @@ const AboutSection = () => {
               </div>
               <h3 className="text-lg font-semibold mb-2">Experience</h3>
               <p className="text-muted-foreground">
-                Completed various university projects, 
                 Collaborated on academic projects using Git and Agile practices.
               </p>
             </CardContent>
