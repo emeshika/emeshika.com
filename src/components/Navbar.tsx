@@ -20,6 +20,14 @@ const Navbar = () => {
           <Link to="/" className="web3-link">Home</Link>
           <Link to="/about" className="web3-link">About</Link>
           <Link to="/projects" className="web3-link">Projects</Link>
+          <a
+            href="https://app.gitbook.com/o/pUnQytAcy3IqtzDnPUnC/s/0FndmxzFFmyCwRJGQ8zO/getting-started/quickstart"
+            className="web3-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Notes
+          </a>
           <Link to="/blog" className="web3-link">Blog</Link>
           <Button variant="outline" className="border-web3-primary text-web3-primary hover:bg-web3-primary hover:text-white transition-colors duration-300">
             <Link to="/contact">Get in Touch</Link>
@@ -45,6 +53,15 @@ const Navbar = () => {
             <Link to="/" className="text-xl" onClick={toggleMenu}>Home</Link>
             <Link to="/about" className="text-xl" onClick={toggleMenu}>About</Link>
             <Link to="/projects" className="text-xl" onClick={toggleMenu}>Projects</Link>
+            <a
+              href="https://app.gitbook.com/o/pUnQytAcy3IqtzDnPUnC/s/0FndmxzFFmyCwRJGQ8zO/getting-started/quickstart"
+              className="text-xl"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={toggleMenu}
+            >
+              Notes
+            </a>
             <Link to="/blog" className="text-xl" onClick={toggleMenu}>Blog</Link>
             <Button variant="outline" className="w-full border-web3-primary text-web3-primary hover:bg-web3-primary hover:text-white">
               <Link to="/contact" onClick={toggleMenu}>Get in Touch</Link>
