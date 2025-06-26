@@ -9,6 +9,14 @@ const Navbar = () => {
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -31,9 +39,8 @@ const Navbar = () => {
         </Link>
         
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/" className="web3-link">Home</Link>
-          <Link to="/about" className="web3-link">About</Link>
-          <Link to="/projects" className="web3-link">Projects</Link>
+          <button onClick={() => scrollToSection('about')} className="web3-link">About</button>
+          <button onClick={() => scrollToSection('projects')} className="web3-link">Projects</button>
           <a
             href="https://app.gitbook.com/o/pUnQytAcy3IqtzDnPUnC/s/0FndmxzFFmyCwRJGQ8zO/getting-started/quickstart"
             className="web3-link"
@@ -42,10 +49,21 @@ const Navbar = () => {
           >
             Notes
           </a>
-          <Link to="/blog" className="web3-link">Blog</Link>
-          <Button variant="outline" size="sm" className="border-web3-primary text-web3-primary hover:bg-web3-primary hover:text-white transition-colors duration-300">
-            <Link to="/contact">Get in Touch</Link>
-          </Button>
+          <a
+            href="https://app.gitbook.com/o/pUnQytAcy3IqtzDnPUnC/s/0FndmxzFFmyCwRJGQ8zO/getting-started/quickstart"
+            className="web3-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Blog
+          </a>
+          <button className="web3-link" onClick={() => scrollToSection('feedback')}>Feedback</button>
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="web3-link"
+          >
+            Contact
+          </button>
         </div>
         
         <div className="md:hidden">
@@ -64,9 +82,8 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-background z-[60] pt-20">
           <div className="flex flex-col items-center gap-8 p-8">
-            <Link to="/" className="text-xl" onClick={toggleMenu}>Home</Link>
-            <Link to="/about" className="text-xl" onClick={toggleMenu}>About</Link>
-            <Link to="/projects" className="text-xl" onClick={toggleMenu}>Projects</Link>
+            <button onClick={() => scrollToSection('about')} className="text-xl">About</button>
+            <button onClick={() => scrollToSection('projects')} className="text-xl">Projects</button>
             <a
               href="https://app.gitbook.com/o/pUnQytAcy3IqtzDnPUnC/s/0FndmxzFFmyCwRJGQ8zO/getting-started/quickstart"
               className="text-xl"
@@ -76,10 +93,22 @@ const Navbar = () => {
             >
               Notes
             </a>
-            <Link to="/blog" className="text-xl" onClick={toggleMenu}>Blog</Link>
-            <Button variant="outline" className="w-full border-web3-primary text-web3-primary hover:bg-web3-primary hover:text-white">
-              <Link to="/contact" onClick={toggleMenu}>Get in Touch</Link>
-            </Button>
+            <a
+              href="https://app.gitbook.com/o/pUnQytAcy3IqtzDnPUnC/s/0FndmxzFFmyCwRJGQ8zO/getting-started/quickstart"
+              className="text-xl"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={toggleMenu}
+            >
+              Blog
+            </a>
+            <button className="text-xl" onClick={() => scrollToSection('feedback')}>Feedback</button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-xl"
+            >
+              Contact
+            </button>
           </div>
         </div>
       )}

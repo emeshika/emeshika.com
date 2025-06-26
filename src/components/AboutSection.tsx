@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Book, Code, User, Calendar } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -19,24 +18,8 @@ const AboutSection = () => {
           <div className="w-20 h-1 bg-web3-primary"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="flex justify-center md:justify-start">
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-full bg-web3-gradient opacity-30 blur-lg"></div>
-              <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-full p-1">
-                <Avatar className="w-48 h-48 border-4 border-background">
-                  <AvatarImage 
-                    src="/lovable-uploads/a943d65f-9f53-4099-b8ad-c7bada0fc95b.png" 
-                    alt="Hirushi Emeshika"
-                    className="object-cover"
-                  />
-                  <AvatarFallback>HE</AvatarFallback>
-                </Avatar>
-              </div>
-            </div>
-          </div>
-          
-          <div className="glass-morphism rounded-xl p-6 space-y-6">
+        <div className="flex justify-center">
+          <div className="glass-morphism rounded-xl p-8 md:p-12 w-full max-w-7xl space-y-6">
             <p className="text-lg">
               Hello! I'm Hirushi Emeshika, a dedicated Data Science undergraduate at the Sri Lanka Institute of Information Technology (SLIIT). 
               I'm passionate about transforming raw data into meaningful insights and building solutions that create real-world impact.

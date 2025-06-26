@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -97,44 +96,35 @@ const HeroSection = () => {
       <div className="absolute top-20 right-20 w-64 h-64 bg-web3-primary/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-20 w-72 h-72 bg-web3-secondary/20 rounded-full blur-3xl"></div>
       
-      <div className="container mx-auto px-6 md:px-12 z-10">
-        <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl animate-fade-in">
-          <div className="md:order-2">
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-full bg-web3-gradient opacity-50 blur-lg"></div>
-              <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-full p-1">
-                <Avatar className="w-56 h-56 border-4 border-background">
-                  <AvatarImage 
-                    src="/lovable-uploads/a943d65f-9f53-4099-b8ad-c7bada0fc95b.png"
-                    alt="Hirushi Emeshika"
-                    className="object-cover"
-                  />
-                  <AvatarFallback>HE</AvatarFallback>
-                </Avatar>
-              </div>
-            </div>
-          </div>
-          
-          <div className="flex flex-col gap-6 md:order-1">
+      <div className="container mx-auto px-6 md:px-12 z-10 relative">
+        <div className="flex flex-col md:flex-row items-center gap-8 max-w-3xl animate-fade-in">
+          <div className="flex flex-col gap-6 md:order-1 w-full">
             <div className="backdrop-blur-lg bg-black/40 border border-white/10 rounded-xl p-6 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]">
               <h1 className="text-4xl md:text-6xl font-bold text-center md:text-left">
                 Hi, I'm <span className="text-gradient">Hirushi Emeshika</span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed text-center md:text-left mt-4">
+              <p className="text-xl md:text-xl text-muted-foreground leading-relaxed text-center md:text-left mt-4">
+                @emeshika <br/>
+                Undergraduate | Data Scientist | ML & AI | Enthusiast</p><br/>
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed text-center md:text-left mt-4">
               Aspiring Data Scientist at SLIIT, combining coding, statistics, and machine learning to unlock insights from data, with a strong interest in AI, and data visualization.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">
-                <Button className="backdrop-blur-md bg-web3-primary/80 hover:bg-web3-primary text-white px-6 py-6 border border-white/10">
-                  <Link to="/projects" className="flex items-center gap-2">
-                    View My Projects <ArrowRight size={18} />
-                  </Link>
-                </Button>
-                <Button variant="outline" className="backdrop-blur-md border-web3-secondary text-web3-secondary hover:bg-web3-secondary/20 hover:text-web3-secondary px-6 py-6">
-                  <Link to="/about" className="flex items-center gap-2">
-                    Learn About Me
-                  </Link>
-                </Button>
-              </div>
+            </div>
+          </div>
+        </div>
+        {/* Avatar absolute on desktop, centered on mobile */}
+        <div className="flex justify-center mt-8 md:mt-0 md:block md:absolute md:top-1/2 md:right-12 md:-translate-y-1/2">
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-full bg-web3-gradient opacity-50 blur-lg"></div>
+            <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-full p-1">
+              <Avatar className="w-96 h-96 border-4 border-background">
+                <AvatarImage 
+                  src="/lovable-uploads/a943d65f-9f53-4099-b8ad-c7bada0fc95b.png"
+                  alt="Hirushi Emeshika"
+                  className="object-cover"
+                />
+                <AvatarFallback>HE</AvatarFallback>
+              </Avatar>
             </div>
           </div>
         </div>
