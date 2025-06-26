@@ -38,16 +38,16 @@ const AboutSection = () => {
           
           <div className="glass-morphism rounded-xl p-6 space-y-6">
             <p className="text-lg">
-              I'm a passionate Data Science undergraduate at Sri Lanka Institute of Information Technology (SLIIT), 
-              dedicated to leveraging data to solve complex problems and create meaningful insights.
+              Hello! I'm Hirushi Emeshika, a dedicated Data Science undergraduate at the Sri Lanka Institute of Information Technology (SLIIT). 
+              I'm passionate about transforming raw data into meaningful insights and building solutions that create real-world impact.
             </p>
             <p className="text-lg">
-              With a strong foundation in statistical analysis, machine learning, and data visualization, 
-              I strive to bridge the gap between raw data and actionable intelligence.
+              As a student specializing in Data Science, I've cultivated strong skills in statistical analysis, machine learning, data visualization, and programming. 
+              I enjoy solving complex challenges through data-driven approaches and crafting intuitive visualizations that communicate insights clearly and effectively.
             </p>
             <p className="text-lg">
-              My academic journey has equipped me with both theoretical knowledge and practical experience, 
-              allowing me to approach data challenges with creativity and analytical rigor.
+              My academic journey at SLIIT has equipped me with both solid theoretical foundations and hands-on experience through diverse, real-world projects. 
+              I'm committed to continuous learning and staying current with the latest trends in AI, analytics, and emerging technologies.
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ const AboutSection = () => {
                 <Code className="text-web3-primary" size={24} />
               </div>
               <h3 className="text-lg font-semibold mb-2">Skills</h3>
-              <p className="text-muted-foreground">Data Analysis, Machine Learning, Visualization</p>
+              <p className="text-muted-foreground">Data Analysis, Machine Learning Algorithms, Predictive Modeling, Data Visualization, Mobile App Development, UI/UX Design</p>
             </CardContent>
           </Card>
           
@@ -89,7 +89,10 @@ const AboutSection = () => {
                 <Calendar className="text-web3-primary" size={24} />
               </div>
               <h3 className="text-lg font-semibold mb-2">Experience</h3>
-              <p className="text-muted-foreground">University Projects, Research Work</p>
+              <p className="text-muted-foreground">
+                Completed various university projects, 
+                Collaborated on academic projects using Git and Agile practices.
+              </p>
             </CardContent>
           </Card>
         </div>

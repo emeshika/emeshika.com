@@ -121,7 +121,7 @@ const HeroSection = () => {
                 Hi, I'm <span className="text-gradient">Hirushi Emeshika</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed text-center md:text-left mt-4">
-                Data Science Undergraduate at SLIIT University, creating impactful projects and exploring the frontiers of AI and analytics.
+              Aspiring Data Scientist at SLIIT, combining coding, statistics, and machine learning to unlock insights from data, with a strong interest in AI, and data visualization.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center md:justify-start">
                 <Button className="backdrop-blur-md bg-web3-primary/80 hover:bg-web3-primary text-white px-6 py-6 border border-white/10">
