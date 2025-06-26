@@ -89,13 +89,13 @@ const Navbar = () => {
       
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-black z-[999] pt-20 flex flex-col items-center justify-center">
+        <div className="fixed top-0 left-0 w-screen h-screen bg-black z-[9999] pt-20 flex flex-col items-center justify-center">
           <div className="flex flex-col items-center gap-8 p-8 w-full">
-            <button onClick={() => scrollToSection('about')} className="text-2xl font-semibold">About</button>
-            <button onClick={() => scrollToSection('projects')} className="text-2xl font-semibold">Projects</button>
+            <button onClick={() => scrollToSection('about')} className="text-2xl font-semibold text-white">About</button>
+            <button onClick={() => scrollToSection('projects')} className="text-2xl font-semibold text-white">Projects</button>
             <a
               href="https://app.gitbook.com/o/pUnQytAcy3IqtzDnPUnC/s/0FndmxzFFmyCwRJGQ8zO/getting-started/quickstart"
-              className="text-2xl font-semibold"
+              className="text-2xl font-semibold text-white"
               target="_blank"
               rel="noopener noreferrer"
               onClick={toggleMenu}
@@ -104,7 +104,7 @@ const Navbar = () => {
             </a>
             <a
               href="https://app.gitbook.com/o/pUnQytAcy3IqtzDnPUnC/s/0FndmxzFFmyCwRJGQ8zO/getting-started/quickstart"
-              className="text-2xl font-semibold"
+              className="text-2xl font-semibold text-white"
               target="_blank"
               rel="noopener noreferrer"
               onClick={toggleMenu}
@@ -113,7 +113,7 @@ const Navbar = () => {
             </a>
             <button
               onClick={() => scrollToSection('contact')}
-              className="text-2xl font-semibold"
+              className="text-2xl font-semibold text-white"
             >
               Contact
             </button>
