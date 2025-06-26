@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -38,15 +37,15 @@ const BlogSection = () => {
     <section className="py-20 px-6 md:px-12" id="blog">
       <div className="container mx-auto">
         <div className="flex flex-col gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left">
             Latest <span className="text-gradient">Blog Posts</span>
           </h2>
-          <div className="w-20 h-1 bg-web3-primary"></div>
+          <div className="w-20 h-1 bg-web3-primary mx-auto md:mx-0"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map(post => (
-            <Card key={post.id} className="bg-card border-none overflow-hidden card-hover">
+            <Card key={post.id} className="bg-card border-none overflow-hidden card-hover w-full">
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                   <Calendar size={14} />
@@ -61,7 +60,7 @@ const BlogSection = () => {
                 <p className="text-muted-foreground">{post.excerpt}</p>
               </CardContent>
               <CardFooter>
-                <Button variant="ghost" className="text-web3-primary hover:text-web3-primary hover:bg-web3-primary/10 p-0">
+                <Button variant="ghost" className="text-web3-primary hover:text-web3-primary hover:bg-web3-primary/10 p-0 w-full">
                   <Link to={post.link} className="flex items-center gap-2">
                     Read More <ArrowRight size={16} />
                   </Link>
@@ -72,7 +71,7 @@ const BlogSection = () => {
         </div>
         
         <div className="flex justify-center mt-12">
-          <Button variant="outline" className="border-web3-primary text-web3-primary hover:bg-web3-primary hover:text-white">
+          <Button variant="outline" className="border-web3-primary text-web3-primary hover:bg-web3-primary hover:text-white w-full max-w-xs">
             <Link to="/blog" className="flex items-center gap-2">
               View All Posts <ArrowRight size={16} />
             </Link>

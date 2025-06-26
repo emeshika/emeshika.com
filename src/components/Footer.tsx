@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="py-6 px-6 md:px-12 border-t border-muted">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 text-center md:text-left">
             <Link to="/" className="text-2xl font-bold text-gradient">
               emeshika
             </Link>
@@ -16,7 +16,7 @@ const Footer = () => {
               Hirushi Emeshika
             </p>
           </div>
-          <div className="md:col-span-2 flex justify-end items-end text-right">
+          <div className="md:col-span-2 flex justify-end items-end text-center md:text-right">
             <p className="text-sm text-muted-foreground">
               © {currentYear} Hirushi Emeshika. All rights reserved.<br />
               <span className="text-xs">

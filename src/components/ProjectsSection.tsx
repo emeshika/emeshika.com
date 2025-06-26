@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,15 +39,15 @@ const ProjectsSection = () => {
       
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold text-center md:text-left">
             My <span className="text-gradient">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-web3-primary"></div>
+          <div className="w-20 h-1 bg-web3-primary mx-auto md:mx-0"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map(project => (
-            <Card key={project.id} className="neo-blur border-none overflow-hidden card-hover gradient-border">
+            <Card key={project.id} className="neo-blur border-none overflow-hidden card-hover gradient-border w-full">
               <CardHeader className="pb-2">
                 <CardTitle className="text-xl">{project.title}</CardTitle>
               </CardHeader>
@@ -63,7 +62,7 @@ const ProjectsSection = () => {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button variant="ghost" className="text-web3-primary hover:text-web3-primary hover:bg-web3-primary/10 p-0">
+                <Button variant="ghost" className="text-web3-primary hover:text-web3-primary hover:bg-web3-primary/10 p-0 w-full">
                   <Link to={project.link} className="flex items-center gap-2">
                     View Project <ArrowRight size={16} />
                   </Link>
@@ -74,7 +73,7 @@ const ProjectsSection = () => {
         </div>
         
         <div className="flex justify-center mt-12">
-          <Button variant="outline" className="glass-morphism border-web3-primary text-web3-primary hover:bg-web3-primary/20 hover:text-web3-primary">
+          <Button variant="outline" className="glass-morphism border-web3-primary text-web3-primary hover:bg-web3-primary/20 hover:text-web3-primary w-full max-w-xs">
             <Link to="https://github.com/emeshika" className="flex items-center gap-2">
               View All Projects <ArrowRight size={16} />
             </Link>
