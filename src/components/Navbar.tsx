@@ -28,13 +28,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 w-full py-2 px-6 md:px-12 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-lg' 
-        : 'bg-transparent'
+    <nav className={`fixed top-0 left-0 right-0 z-50 w-full py-2 px-4 md:px-12 transition-all duration-300 ${
+      isScrolled || isMenuOpen
+        ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-lg'
+        : 'bg-background/90 md:bg-transparent'
     }`}>
       <div className="container mx-auto flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold text-gradient">
+        <Link to="/" className="text-xl md:text-2xl font-bold text-gradient">
           emeshika
         </Link>
         

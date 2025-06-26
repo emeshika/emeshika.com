@@ -90,7 +90,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[85vh] flex flex-col justify-center overflow-hidden">
+    <section className="relative w-full min-h-[85vh] flex flex-col justify-center overflow-hidden mt-16 md:mt-0">
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
       
       <div className="absolute top-20 right-20 w-64 h-64 bg-web3-primary/20 rounded-full blur-3xl"></div>
