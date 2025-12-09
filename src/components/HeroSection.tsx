@@ -118,7 +118,7 @@ const HeroSection = () => {
               <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-full p-1">
                 <Avatar className="w-60 h-60 md:w-96 md:h-96 border-4 border-background">
                   <AvatarImage 
-                    src="/lovable-uploads/a943d65f-9f53-4099-b8ad-c7bada0fc95b.png"
+                    src="/lovable-uploads/dp.jpg"
                     alt="Hirushi Emeshika"
                     className="object-cover"
                   />

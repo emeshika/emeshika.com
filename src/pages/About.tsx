@@ -26,7 +26,7 @@ const About = () => {
                   <div className="absolute -inset-4 rounded-lg bg-web3-gradient opacity-50 blur-lg"></div>
                   <div className="relative rounded-lg overflow-hidden aspect-square bg-muted w-full max-w-md">
                     <img 
-                      src="/lovable-uploads/a943d65f-9f53-4099-b8ad-c7bada0fc95b.png" 
+                      src="/lovable-uploads/dp.jpg" 
                       alt="Hirushi Emeshika Profile" 
                       className="w-full h-full object-cover"
                     />
