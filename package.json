@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20 <25"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -63,7 +66,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
-    "@rollup/rollup-win32-x64-msvc": "^4.62.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
