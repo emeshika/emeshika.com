@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { Github, Linkedin, Send, CheckCircle, AlertCircle, Loader2, Copy, Check } from 'lucide-react';
+import React, { useState } from 'react';
+import { Send, CheckCircle, AlertCircle, Loader2, Copy, Check, ExternalLink } from 'lucide-react';
 import { identity } from '@/data/profile';
 
 type FormState = 'idle' | 'loading' | 'success' | 'error';
@@ -8,7 +8,35 @@ const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID as string | undefined;
 
 const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 
+const MAILTO = `mailto:${identity.email}?subject=Hello%20from%20your%20portfolio`;
+
 const ContactSection = () => {
+  return (
+    <section className="py-20 px-6 md:px-12 bg-muted/30" id="contact">
+      <div className="container mx-auto max-w-4xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          {/* Left */}
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Contact</h2>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              I'm currently open to data science, machine learning and data engineering roles.
+              The fastest way to reach me is by email.
+            </p>
+          </div>
+
+          {/* Right */}
+          {FORMSPREE_ID ? (
+            <TabbedContact formspreeId={FORMSPREE_ID} />
+          ) : (
+            <ContactRows />
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+function ContactRows() {
   const [copied, setCopied] = useState(false);
 
   const copyEmail = async () => {
@@ -16,68 +44,114 @@ const ContactSection = () => {
       await navigator.clipboard.writeText(identity.email);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch {
-      /* clipboard blocked */
-    }
+    } catch { /* blocked */ }
   };
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-muted/30" id="contact">
-      <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-10">Contact</h2>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
-          {/* Left: direct links */}
-          <div>
-            <p className="text-muted-foreground leading-relaxed mb-8 text-sm">
-              Whether it's a data science role, a research collaboration, or a project idea — feel free to reach out.
-            </p>
-
-            <div className="space-y-5">
-              {/* Email with copy */}
-              <div className="flex items-center gap-3">
-                <div className="flex-1 font-mono text-sm text-foreground break-all">{identity.email}</div>
-                <button
-                  onClick={copyEmail}
-                  aria-label="Copy email address"
-                  className="shrink-0 inline-flex items-center gap-1.5 text-xs border border-border rounded px-2.5 py-1 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-                >
-                  {copied ? <Check size={12} className="text-emerald-500" /> : <Copy size={12} />}
-                  {copied ? 'Copied' : 'Copy'}
-                </button>
-              </div>
-
-              <a
-                href={identity.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Github size={16} />
-                github.com/emeshika
-              </a>
-
-              <a
-                href={identity.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <Linkedin size={16} />
-                linkedin.com/in/hirushiemeshika
-              </a>
-            </div>
-          </div>
-
-          {/* Right: Formspree form or nothing */}
-          {FORMSPREE_ID && <ContactForm formspreeId={FORMSPREE_ID} email={identity.email} />}
+    <div>
+      <dl className="divide-y divide-border">
+        {/* Email */}
+        <div className="py-3.5 flex items-center justify-between gap-4">
+          <dt className="shrink-0 w-20 text-xs font-mono text-muted-foreground">Email</dt>
+          <dd className="flex-1 flex items-center justify-between gap-2 min-w-0">
+            <span className="text-sm text-foreground truncate">{identity.email}</span>
+            <button
+              onClick={copyEmail}
+              aria-label="Copy email address"
+              className="shrink-0 inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {copied ? <Check size={12} className="text-emerald-500" /> : <Copy size={12} />}
+              <span className="sr-only sm:not-sr-only">{copied ? 'Copied' : 'Copy'}</span>
+            </button>
+          </dd>
         </div>
-      </div>
-    </section>
-  );
-};
 
-function ContactForm({ formspreeId, email }: { formspreeId: string; email: string }) {
+        {/* GitHub */}
+        <div className="py-3.5 flex items-center gap-4">
+          <dt className="shrink-0 w-20 text-xs font-mono text-muted-foreground">GitHub</dt>
+          <dd>
+            <a
+              href={identity.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1 text-sm text-foreground hover:text-primary transition-colors"
+            >
+              github.com/emeshika
+              <ExternalLink size={11} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+          </dd>
+        </div>
+
+        {/* LinkedIn */}
+        <div className="py-3.5 flex items-center gap-4">
+          <dt className="shrink-0 w-20 text-xs font-mono text-muted-foreground">LinkedIn</dt>
+          <dd>
+            <a
+              href={identity.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1 text-sm text-foreground hover:text-primary transition-colors"
+            >
+              hirushiemeshika
+              <ExternalLink size={11} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
+          </dd>
+        </div>
+
+        {/* Location */}
+        <div className="py-3.5 flex items-center gap-4">
+          <dt className="shrink-0 w-20 text-xs font-mono text-muted-foreground">Location</dt>
+          <dd className="text-sm text-foreground">{identity.location}</dd>
+        </div>
+      </dl>
+
+      <a
+        href={MAILTO}
+        className="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+      >
+        <Send size={14} />
+        Send an email
+      </a>
+    </div>
+  );
+}
+
+function TabbedContact({ formspreeId }: { formspreeId: string }) {
+  const [tab, setTab] = useState<'email' | 'form'>('email');
+
+  return (
+    <div>
+      {/* Tab switcher */}
+      <div className="flex items-center gap-1 mb-6 border-b border-border">
+        <button
+          onClick={() => setTab('email')}
+          className={`pb-2.5 px-1 text-sm transition-colors border-b-2 -mb-px ${
+            tab === 'email'
+              ? 'border-primary text-foreground font-medium'
+              : 'border-transparent text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          Email
+        </button>
+        <span className="text-muted-foreground/40 mx-1 pb-2.5">·</span>
+        <button
+          onClick={() => setTab('form')}
+          className={`pb-2.5 px-1 text-sm transition-colors border-b-2 -mb-px ${
+            tab === 'form'
+              ? 'border-primary text-foreground font-medium'
+              : 'border-transparent text-muted-foreground hover:text-foreground'
+          }`}
+        >
+          Message form
+        </button>
+      </div>
+
+      {tab === 'email' ? <ContactRows /> : <ContactForm formspreeId={formspreeId} />}
+    </div>
+  );
+}
+
+function ContactForm({ formspreeId }: { formspreeId: string }) {
   const [name, setName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [subject, setSubject] = useState('');
@@ -126,10 +200,7 @@ function ContactForm({ formspreeId, email }: { formspreeId: string; email: strin
         <CheckCircle className="text-emerald-500" size={40} />
         <p className="font-medium text-foreground">Message sent!</p>
         <p className="text-sm text-muted-foreground">I'll get back to you as soon as I can.</p>
-        <button
-          onClick={() => setState('idle')}
-          className="mt-2 text-sm text-primary hover:underline"
-        >
+        <button onClick={() => setState('idle')} className="mt-2 text-sm text-primary hover:underline">
           Send another
         </button>
       </div>
@@ -138,16 +209,8 @@ function ContactForm({ formspreeId, email }: { formspreeId: string; email: strin
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-      <input
-        type="text"
-        name="website"
-        value={honeypot}
-        onChange={e => setHoneypot(e.target.value)}
-        className="hidden"
-        tabIndex={-1}
-        autoComplete="off"
-        aria-hidden="true"
-      />
+      <input type="text" name="website" value={honeypot} onChange={e => setHoneypot(e.target.value)}
+        className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1">
@@ -170,14 +233,8 @@ function ContactForm({ formspreeId, email }: { formspreeId: string; email: strin
 
       <div className="space-y-1">
         <label htmlFor="cf-message" className="text-xs font-medium text-foreground">Message</label>
-        <textarea
-          id="cf-message"
-          value={message}
-          onChange={e => setMessage(e.target.value)}
-          placeholder="Your message"
-          rows={5}
-          className={`${fieldClass('message')} resize-none`}
-        />
+        <textarea id="cf-message" value={message} onChange={e => setMessage(e.target.value)} placeholder="Your message"
+          rows={5} className={`${fieldClass('message')} resize-none`} />
         {errors.message && <p className="text-xs text-destructive">{errors.message}</p>}
       </div>
 
@@ -185,17 +242,15 @@ function ContactForm({ formspreeId, email }: { formspreeId: string; email: strin
         <div className="flex items-center gap-2 text-xs text-destructive">
           <AlertCircle size={14} />
           Something went wrong. Email{' '}
-          <a href={`mailto:${email}`} className="underline">{email}</a> directly.
+          <a href={`mailto:${identity.email}`} className="underline">{identity.email}</a> directly.
         </div>
       )}
 
-      <button
-        type="submit"
-        disabled={state === 'loading'}
+      <button type="submit" disabled={state === 'loading'}
         className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
       >
         {state === 'loading' ? (
-          <><Loader2 size={14} className="animate-spin" /> Sending…</>
+          <><Loader2 size={14} className="animate-spin" /> Sending...</>
         ) : (
           <><Send size={14} /> Send Message</>
         )}
