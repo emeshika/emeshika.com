@@ -8,7 +8,6 @@ export const identity = {
   github: 'https://github.com/emeshika',
   linkedin: 'https://linkedin.com/in/hirushiemeshika',
   location: 'Malabe, Sri Lanka',
-  cvPath: '/Hirushi_Emeshika_CV.pdf',
   heroRole: 'Data Science Undergraduate at SLIIT · Former Data Science Intern, Gamage Recruiters',
   heroTagline: 'Machine Learning · NLP · Data Engineering & MLOps · Python · SQL',
   heroValue:
@@ -37,7 +36,6 @@ export const educationHistory: EducationEntry[] = [
     degree: 'G.C.E. Advanced Level — Physical Science Stream',
     institution: 'H/ Vijayaba National School',
     period: '2021',
-    subjects: 'Combined Mathematics, Chemistry, Physics',
   },
 ];
 
@@ -206,7 +204,7 @@ export const projects: Project[] = [
   {
     id: 'careconnect',
     title: 'CareConnect',
-    problem: 'Caregiver scheduling, payments, and client management — MERN stack with user auth and admin dashboard.',
+    problem: 'Caregiver scheduling, payments, and client management. MERN stack with user auth and admin dashboard.',
     tags: ['React.js', 'Express.js', 'MongoDB', 'Node.js'],
     repoUrl: 'https://github.com/emeshika/CaregiverManagementSystem',
     visible: true,
@@ -251,14 +249,11 @@ export interface SkillGroup {
 }
 
 export const skillGroups: SkillGroup[] = [
-  { label: 'Programming', skills: ['Python', 'SQL', 'Java', 'JavaScript', 'PHP', 'HTML/CSS'] },
-  {
-    label: 'ML & Data Science',
-    skills: ['scikit-learn', 'TensorFlow', 'Keras', 'PyTorch', 'NumPy', 'Pandas', 'Time-Series Forecasting', 'SMOTE'],
-  },
-  { label: 'NLP', skills: ['NLTK', 'Sentence-BERT', 'TF-IDF', 'Cosine Similarity'] },
+  { label: 'ML & Data Science', skills: ['scikit-learn', 'TensorFlow', 'Keras', 'PyTorch', 'NumPy', 'Pandas', 'Time-Series Forecasting', 'SMOTE'] },
   { label: 'Data Engineering & MLOps', skills: ['Apache Spark', 'Kafka', 'Airflow', 'MLflow'] },
-  { label: 'Analytics & BI', skills: ['Power BI', 'Advanced Excel', 'SQL'] },
+  { label: 'NLP', skills: ['NLTK', 'Sentence-BERT', 'TF-IDF', 'Cosine Similarity'] },
+  { label: 'Programming', skills: ['Python', 'SQL', 'Java', 'JavaScript', 'PHP', 'HTML/CSS'] },
+  { label: 'Analytics & BI', skills: ['Power BI', 'Advanced Excel'] },
   { label: 'Databases', skills: ['PostgreSQL', 'MySQL', 'MS SQL Server', 'MongoDB Atlas'] },
   { label: 'Cloud', skills: ['Microsoft Azure', 'Azure HDInsight', 'Azure Databricks', 'AWS S3'] },
   { label: 'Web & APIs', skills: ['FastAPI', 'Flask', 'Spring Boot', 'React.js', 'Node.js', 'Express.js', 'REST', 'WebSockets'] },

@@ -1,6 +1,5 @@
 import React from 'react';
-import { ArrowDown, Github, Linkedin, FileDown } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ArrowDown, Github, Linkedin } from 'lucide-react';
 import { identity } from '@/data/profile';
 
 const HeroSection = () => {
@@ -10,10 +9,10 @@ const HeroSection = () => {
   return (
     <section className="relative w-full min-h-[92vh] flex flex-col justify-center pt-14 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-10 py-16 animate-fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] items-center gap-10 md:gap-16 py-16 animate-fade-in">
 
           {/* Left — text */}
-          <div className="flex-1 max-w-xl">
+          <div className="max-w-xl">
             {/* Availability indicator */}
             <div className="inline-flex items-center gap-2 text-sm text-muted-foreground mb-6">
               <span className="relative flex h-2 w-2">
@@ -27,7 +26,7 @@ const HeroSection = () => {
               {identity.name}
             </h1>
 
-            <p className="text-base text-primary font-medium mb-1">
+            <p className="text-base md:text-lg text-muted-foreground font-medium mb-1">
               {identity.heroRole}
             </p>
 
@@ -47,15 +46,6 @@ const HeroSection = () => {
                 <ArrowDown size={15} />
                 View Projects
               </button>
-
-              <a
-                href={identity.cvPath}
-                download
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-border text-sm font-medium text-foreground hover:bg-muted transition-colors"
-              >
-                <FileDown size={15} />
-                Download CV
-              </a>
 
               <a
                 href={identity.github}
@@ -80,16 +70,26 @@ const HeroSection = () => {
           </div>
 
           {/* Right — photo */}
-          <div className="shrink-0">
-            <Avatar className="w-44 h-44 md:w-56 md:h-56 rounded-2xl ring-1 ring-border">
-              <AvatarImage
-                src="/lovable-uploads/dp.jpg"
-                alt={identity.name}
-                className="object-cover"
-                loading="eager"
+          <div className="flex justify-center md:justify-end order-first md:order-last">
+            <div className="relative w-48 md:w-80">
+              {/* Offset frame */}
+              <div
+                className="absolute inset-0 translate-x-2.5 translate-y-2.5 rounded-2xl border border-border"
+                aria-hidden="true"
               />
-              <AvatarFallback className="text-xl bg-muted text-muted-foreground rounded-2xl">HE</AvatarFallback>
-            </Avatar>
+              {/* Photo */}
+              <div className="relative overflow-hidden rounded-2xl border border-border" style={{ aspectRatio: '4/5' }}>
+                <img
+                  src="/lovable-uploads/dp.jpg"
+                  alt="Hirushi Emeshika, Data Science undergraduate at SLIIT"
+                  width={320}
+                  height={400}
+                  className="w-full h-full object-cover object-top"
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </div>
+            </div>
           </div>
 
         </div>
