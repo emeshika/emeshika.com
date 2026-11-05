@@ -35,7 +35,7 @@ const BlogPost = () => {
             </p>
             <Link
               to="/blog"
-              className="inline-flex items-center gap-2 text-web3-primary hover:underline"
+              className="inline-flex items-center gap-2 text-primary hover:underline"
             >
               <ArrowLeft size={16} /> Back to Blog
             </Link>
@@ -70,13 +70,13 @@ const BlogPost = () => {
           <div className="container mx-auto max-w-3xl">
             <button
               onClick={() => navigate(-1)}
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-web3-primary transition-colors mb-8"
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8"
               aria-label="Go back"
             >
               <ArrowLeft size={16} /> Back
             </button>
 
-            <Badge className="mb-4 bg-web3-primary/20 text-web3-primary border-web3-primary/30 hover:bg-web3-primary/20">
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 hover:bg-primary/10">
               {frontmatter.category}
             </Badge>
 
@@ -122,16 +122,16 @@ const BlogPost = () => {
           <div className="container mx-auto max-w-3xl">
             <div
               className="
-                prose prose-invert max-w-none
+                prose dark:prose-invert max-w-none
                 prose-headings:font-bold prose-headings:text-foreground
                 prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
                 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
                 prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:my-4
-                prose-a:text-web3-primary prose-a:no-underline hover:prose-a:underline
+                prose-a:text-primary prose-a:no-underline hover:prose-a:underline
                 prose-strong:text-foreground
-                prose-code:text-web3-primary prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
+                prose-code:text-primary prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
                 prose-pre:bg-transparent prose-pre:p-0
-                prose-blockquote:border-l-web3-primary prose-blockquote:text-muted-foreground prose-blockquote:italic
+                prose-blockquote:border-l-primary prose-blockquote:text-muted-foreground prose-blockquote:italic
                 prose-table:w-full prose-th:text-left prose-th:text-sm
                 prose-li:text-muted-foreground prose-li:leading-relaxed
                 prose-img:rounded-lg prose-img:mx-auto

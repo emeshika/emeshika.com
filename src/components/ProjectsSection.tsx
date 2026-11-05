@@ -1,113 +1,96 @@
 import React from 'react';
-import { ArrowRight, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Github, ExternalLink } from 'lucide-react';
 import { projects } from '@/data/profile';
 
-const featuredProjects = projects.filter(p => p.visible && p.category === 'featured');
-const otherProjects = projects.filter(p => p.visible && p.category === 'other');
-
-const roleBadgeClass = (role?: string) => {
-  if (!role) return '';
-  if (role === 'Project Lead') return 'bg-web3-primary/20 text-web3-primary border-web3-primary/30';
-  return 'bg-web3-secondary/20 text-web3-secondary border-web3-secondary/30';
-};
+const featured = projects.filter(p => p.visible && p.category === 'featured');
+const other = projects.filter(p => p.visible && p.category === 'other');
 
 const ProjectsSection = () => {
   return (
-    <section className="py-20 px-6 md:px-12 relative overflow-hidden" id="projects">
-      <div className="absolute top-40 right-10 w-80 h-80 bg-web3-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-64 h-64 bg-web3-secondary/10 rounded-full blur-3xl" />
-
-      <div className="container mx-auto relative z-10">
-        <div className="flex flex-col gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            My <span className="text-gradient">Projects</span>
-          </h2>
-          <div className="w-20 h-1 bg-web3-primary" />
+    <section className="py-20 px-6 md:px-12 bg-muted/30" id="projects">
+      <div className="container mx-auto">
+        <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
+          <h2 className="text-2xl md:text-3xl font-bold">Projects</h2>
+          <a
+            href="https://github.com/emeshika"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-primary hover:underline inline-flex items-center gap-1"
+          >
+            More on GitHub <ExternalLink size={13} />
+          </a>
         </div>
 
-        {/* Featured / data-first projects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {featuredProjects.map(project => (
-            <Card key={project.id} className="neo-blur border-none overflow-hidden card-hover gradient-border flex flex-col">
-              <CardHeader className="pb-2">
-                <div className="flex flex-wrap items-center gap-2 mb-2">
-                  {project.role && (
-                    <Badge variant="outline" className={`text-xs ${roleBadgeClass(project.role)}`}>
-                      {project.role}
-                    </Badge>
-                  )}
-                </div>
-                <CardTitle className="text-lg leading-snug">{project.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="pb-4 flex-1">
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{project.problem}</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tags.map(tag => (
-                    <Badge key={tag} variant="outline" className="bg-web3-primary/10 text-web3-primary border-none text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-              {project.github && (
-                <CardFooter className="pt-0">
-                  <Button asChild variant="ghost" className="text-web3-primary hover:bg-web3-primary/10 p-0 h-auto">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm">
-                      <Github size={14} /> View on GitHub
-                    </a>
-                  </Button>
-                </CardFooter>
+        {/* Featured — 2-col grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
+          {featured.map(p => (
+            <a
+              key={p.id}
+              href={p.repoUrl ?? '#'}
+              target={p.repoUrl ? '_blank' : undefined}
+              rel="noopener noreferrer"
+              className={`group block border border-border rounded-xl p-6 hover:border-primary/40 hover:bg-muted/50 transition-colors ${!p.repoUrl ? 'pointer-events-none' : ''}`}
+              aria-label={p.repoUrl ? `View ${p.title} on GitHub` : p.title}
+            >
+              <div className="flex items-start justify-between gap-3 mb-3">
+                <h3 className="text-sm font-semibold text-foreground leading-snug group-hover:text-primary transition-colors">
+                  {p.title}
+                </h3>
+                {p.repoUrl && (
+                  <Github size={16} className="shrink-0 text-muted-foreground group-hover:text-primary transition-colors mt-0.5" />
+                )}
+              </div>
+              {p.role && (
+                <p className="text-xs text-primary mb-2">{p.role}</p>
               )}
-            </Card>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-4">{p.problem}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {p.tags.map(tag => (
+                  <span key={tag} className="text-xs px-2 py-0.5 rounded-full border border-border text-muted-foreground">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </a>
           ))}
         </div>
 
-        {/* Other projects — compact row */}
-        {otherProjects.length > 0 && (
-          <>
-            <h3 className="text-xl font-semibold mb-6 text-muted-foreground">Other Projects</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-              {otherProjects.map(project => (
-                <div
-                  key={project.id}
-                  className="neo-blur rounded-lg p-4 gradient-border flex flex-col gap-3 card-hover"
-                >
-                  <h4 className="font-semibold text-sm">{project.title}</h4>
-                  <p className="text-muted-foreground text-xs leading-relaxed flex-1">{project.problem}</p>
-                  <div className="flex flex-wrap gap-1">
-                    {project.tags.map(t => (
-                      <Badge key={t} variant="outline" className="bg-web3-primary/10 text-web3-primary border-none text-xs px-1.5 py-0">
-                        {t}
-                      </Badge>
-                    ))}
+        {/* Other — compact list */}
+        {other.length > 0 && (
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">Other Projects</h3>
+            <ul className="divide-y divide-border">
+              {other.map(p => (
+                <li key={p.id} className="py-4 flex items-start justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-sm font-medium text-foreground">{p.title}</span>
+                      <div className="flex flex-wrap gap-1">
+                        {p.tags.slice(0, 2).map(t => (
+                          <span key={t} className="text-xs px-1.5 py-0.5 rounded border border-border text-muted-foreground">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{p.problem}</p>
                   </div>
-                  {project.github && (
+                  {p.repoUrl && (
                     <a
-                      href={project.github}
+                      href={p.repoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-web3-primary hover:underline"
-                      aria-label={`GitHub repo for ${project.title}`}
+                      className="shrink-0 text-xs text-primary hover:underline inline-flex items-center gap-1"
+                      aria-label={`GitHub repo for ${p.title}`}
                     >
-                      <Github size={12} /> GitHub
+                      <Github size={13} /> GitHub
                     </a>
                   )}
-                </div>
+                </li>
               ))}
-            </div>
-          </>
+            </ul>
+          </div>
         )}
-
-        <div className="flex justify-center">
-          <Button asChild variant="outline" className="border-web3-primary/50 text-web3-primary hover:bg-web3-primary/10">
-            <a href="https://github.com/emeshika" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-              View All Projects on GitHub <ArrowRight size={16} />
-            </a>
-          </Button>
-        </div>
       </div>
     </section>
   );

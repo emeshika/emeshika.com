@@ -64,13 +64,6 @@ export default {
                     border: 'hsl(var(--sidebar-border))',
                     ring: 'hsl(var(--sidebar-ring))'
                 },
-                web3: {
-                    dark: '#050d1a',
-                    light: '#FFFFFF',
-                    primary: '#2dd4bf',
-                    secondary: '#818cf8',
-                    accent: '#06b6d4'
-                }
             },
             fontFamily: {
                 'sans': ['Inter', 'sans-serif'],
@@ -125,7 +118,6 @@ export default {
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'web3-gradient': 'linear-gradient(90deg, #2dd4bf, #818cf8)',
             }
         }
     },

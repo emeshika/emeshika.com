@@ -1,64 +1,34 @@
 import React from 'react';
-import { Award, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { certifications } from '@/data/profile';
-
-const issuerBadge: Record<string, string> = {
-  Microsoft: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
-  'AWS SimuLearn': 'bg-orange-500/15 text-orange-400 border-orange-500/30',
-  AWS: 'bg-orange-500/15 text-orange-400 border-orange-500/30',
-  CODL: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
-};
 
 const CertificationsSection = () => {
   return (
-    <section className="py-20 px-6 md:px-12 bg-muted/20 relative overflow-hidden" id="certifications">
-      <div className="absolute top-10 right-20 w-64 h-64 bg-web3-secondary/10 rounded-full blur-3xl" />
+    <section className="py-20 px-6 md:px-12 bg-muted/30" id="certifications">
+      <div className="container mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold mb-10">Certifications</h2>
 
-      <div className="container mx-auto relative z-10">
-        <div className="flex flex-col gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            <span className="text-gradient">Certifications</span>
-          </h2>
-          <div className="w-20 h-1 bg-web3-primary" />
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <ul className="divide-y divide-border max-w-2xl">
           {certifications.map(cert => (
-            <div
-              key={cert.name}
-              className="neo-blur rounded-xl p-5 gradient-border flex items-start gap-4 card-hover"
-            >
-              <div className="w-10 h-10 bg-web3-primary/20 rounded-lg flex items-center justify-center shrink-0">
-                <Award className="text-web3-primary" size={20} />
+            <li key={cert.name} className="py-3.5 flex items-center justify-between gap-4">
+              <div>
+                <p className="text-sm text-foreground">{cert.name}</p>
+                <p className="text-xs text-muted-foreground mt-0.5">{cert.issuer}</p>
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium leading-snug mb-2">{cert.name}</p>
-                <span
-                  className={`inline-block text-xs px-2 py-0.5 rounded-full border font-medium ${
-                    issuerBadge[cert.issuer] ?? 'bg-web3-primary/15 text-web3-primary border-web3-primary/30'
-                  }`}
+              {cert.verifyUrl && (
+                <a
+                  href={cert.verifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 inline-flex items-center gap-1 text-xs text-primary hover:underline"
+                  aria-label={`Verify ${cert.name}`}
                 >
-                  {cert.issuer}
-                </span>
-                {cert.verifyUrl ? (
-                  <a
-                    href={cert.verifyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ml-2 inline-flex items-center gap-1 text-xs text-web3-primary hover:underline"
-                    aria-label={`Verify ${cert.name} certificate`}
-                  >
-                    Verify <ExternalLink size={10} />
-                  </a>
-                ) : (
-                  <span className="ml-2 text-xs text-muted-foreground/50">
-                    {/* TODO: add verifyUrl in src/data/profile.ts */}
-                  </span>
-                )}
-              </div>
-            </div>
+                  Verify <ExternalLink size={11} />
+                </a>
+              )}
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

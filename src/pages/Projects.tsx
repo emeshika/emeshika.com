@@ -1,15 +1,8 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Badge } from '@/components/ui/badge';
-import { Github } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import { projects } from '@/data/profile';
-
-const roleBadgeClass = (role?: string) => {
-  if (!role) return '';
-  if (role === 'Project Lead') return 'bg-web3-primary/20 text-web3-primary border-web3-primary/30';
-  return 'bg-web3-secondary/20 text-web3-secondary border-web3-secondary/30';
-};
 
 const Projects = () => {
   const featured = projects.filter(p => p.visible && p.category === 'featured');
@@ -19,78 +12,92 @@ const Projects = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      <main className="flex-1">
-        <section className="py-20 px-6 md:px-12 bg-grid">
+      <main className="flex-1 pt-14">
+        <section className="py-20 px-6 md:px-12">
           <div className="container mx-auto">
-            <div className="flex flex-col gap-4 mb-12 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl font-bold">
-                My <span className="text-gradient">Projects</span>
-              </h1>
-              <div className="w-20 h-1 bg-web3-primary" />
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Data science, ML, and software projects from internship, research, and university work.
-              </p>
+            <div className="flex items-center justify-between mb-12 flex-wrap gap-4">
+              <div>
+                <h1 className="text-3xl md:text-4xl font-bold mb-1">Projects</h1>
+                <p className="text-muted-foreground text-sm">
+                  Data science, ML, and software engineering — internship, research, and university work.
+                </p>
+              </div>
+              <a
+                href="https://github.com/emeshika"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-primary hover:underline inline-flex items-center gap-1"
+              >
+                All repos <ExternalLink size={13} />
+              </a>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {/* Featured */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
               {featured.map(p => (
-                <div key={p.id} className="neo-blur rounded-xl p-6 gradient-border card-hover flex flex-col gap-4">
-                  <div className="flex flex-wrap gap-2">
-                    {p.role && (
-                      <Badge variant="outline" className={`text-xs ${roleBadgeClass(p.role)}`}>
-                        {p.role}
-                      </Badge>
+                <a
+                  key={p.id}
+                  href={p.repoUrl ?? '#'}
+                  target={p.repoUrl ? '_blank' : undefined}
+                  rel="noopener noreferrer"
+                  className={`group block border border-border rounded-xl p-6 hover:border-primary/40 hover:bg-muted/50 transition-colors ${!p.repoUrl ? 'pointer-events-none' : ''}`}
+                >
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <h2 className="text-sm font-semibold text-foreground leading-snug group-hover:text-primary transition-colors">
+                      {p.title}
+                    </h2>
+                    {p.repoUrl && (
+                      <Github size={16} className="shrink-0 text-muted-foreground group-hover:text-primary transition-colors mt-0.5" />
                     )}
                   </div>
-                  <h2 className="text-lg font-bold leading-snug">{p.title}</h2>
-                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">{p.problem}</p>
+                  {p.role && <p className="text-xs text-primary mb-2">{p.role}</p>}
+                  <p className="text-xs text-muted-foreground leading-relaxed mb-4">{p.problem}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {p.tags.map(t => (
-                      <Badge key={t} variant="outline" className="bg-web3-primary/10 text-web3-primary border-none text-xs">
+                      <span key={t} className="text-xs px-2 py-0.5 rounded-full border border-border text-muted-foreground">
                         {t}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
-                  {p.github && (
-                    <a
-                      href={p.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-web3-primary hover:underline"
-                    >
-                      <Github size={14} /> View on GitHub
-                    </a>
-                  )}
-                </div>
+                </a>
               ))}
             </div>
 
-            <h2 className="text-2xl font-bold mb-6 text-muted-foreground">Other Projects</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {other.map(p => (
-                <div key={p.id} className="neo-blur rounded-lg p-5 gradient-border card-hover flex flex-col gap-3">
-                  <h3 className="font-semibold">{p.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">{p.problem}</p>
-                  <div className="flex flex-wrap gap-1">
-                    {p.tags.map(t => (
-                      <Badge key={t} variant="outline" className="bg-web3-primary/10 text-web3-primary border-none text-xs">
-                        {t}
-                      </Badge>
-                    ))}
-                  </div>
-                  {p.github && (
-                    <a
-                      href={p.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-xs text-web3-primary hover:underline"
-                    >
-                      <Github size={12} /> GitHub
-                    </a>
-                  )}
-                </div>
-              ))}
-            </div>
+            {/* Other */}
+            {other.length > 0 && (
+              <div>
+                <h2 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+                  Other Projects
+                </h2>
+                <ul className="divide-y divide-border">
+                  {other.map(p => (
+                    <li key={p.id} className="py-4 flex items-start justify-between gap-4">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1 flex-wrap">
+                          <span className="text-sm font-medium text-foreground">{p.title}</span>
+                          {p.tags.slice(0, 2).map(t => (
+                            <span key={t} className="text-xs px-1.5 py-0.5 rounded border border-border text-muted-foreground">
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{p.problem}</p>
+                      </div>
+                      {p.repoUrl && (
+                        <a
+                          href={p.repoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="shrink-0 text-xs text-primary hover:underline inline-flex items-center gap-1"
+                        >
+                          <Github size={13} /> GitHub
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </section>
       </main>

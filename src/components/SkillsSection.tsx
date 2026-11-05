@@ -3,36 +3,29 @@ import { skillGroups } from '@/data/profile';
 
 const SkillsSection = () => {
   return (
-    <section className="py-20 px-6 md:px-12 relative overflow-hidden" id="skills">
-      <div className="absolute top-20 left-20 w-72 h-72 bg-web3-primary/10 rounded-full blur-3xl" />
+    <section className="py-20 px-6 md:px-12" id="skills">
+      <div className="container mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold mb-10">Skills</h2>
 
-      <div className="container mx-auto relative z-10">
-        <div className="flex flex-col gap-4 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Skills <span className="text-gradient">&amp; Tools</span>
-          </h2>
-          <div className="w-20 h-1 bg-web3-primary" />
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">
           {skillGroups.map(group => (
-            <div key={group.label} className="neo-blur rounded-xl p-6 gradient-border">
-              <h3 className="text-sm font-semibold text-web3-primary uppercase tracking-wider mb-4">
+            <div key={group.label} className="flex gap-4">
+              <dt className="shrink-0 w-40 pt-0.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 {group.label}
-              </h3>
-              <div className="flex flex-wrap gap-2">
+              </dt>
+              <dd className="flex flex-wrap gap-1.5">
                 {group.skills.map(skill => (
                   <span
                     key={skill}
-                    className="text-sm px-3 py-1 rounded-full bg-white/5 border border-white/10 text-foreground/80 hover:border-web3-primary/50 hover:text-foreground transition-colors"
+                    className="text-xs px-2.5 py-0.5 rounded-full border border-border text-muted-foreground hover:border-primary/40 hover:text-foreground transition-colors"
                   >
                     {skill}
                   </span>
                 ))}
-              </div>
+              </dd>
             </div>
           ))}
-        </div>
+        </dl>
       </div>
     </section>
   );
