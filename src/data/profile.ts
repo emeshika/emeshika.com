@@ -8,7 +8,7 @@ export const identity = {
   github: 'https://github.com/emeshika',
   linkedin: 'https://linkedin.com/in/hirushiemeshika',
   location: 'Malabe, Sri Lanka',
-  heroRole: 'Data Science Undergraduate at SLIIT · Former Data Science Intern, Gamage Recruiters',
+  heroRole: 'Data Science Undergraduate at SLIIT · Former DS Intern at Gamage Recruiters',
   heroTagline: 'Machine Learning · NLP · Data Engineering & MLOps · Python · SQL',
   heroValue:
     'I build end-to-end data pipelines, predictive models, and ML systems that turn real-world datasets into business insights.',
@@ -146,6 +146,7 @@ export const projects: Project[] = [
   {
     id: 'mlops-pipeline',
     title: 'Real-Time Fraud Detection & MLOps Pipeline',
+    role: 'Individual Project',
     problem:
       'Full ML lifecycle: data ingestion, model training, drift monitoring with Deepchecks, experiment tracking with MLflow, and model serving via Flask API.',
     tags: ['Apache Airflow', 'MLflow', 'Deepchecks', 'Flask', 'Python'],
@@ -156,6 +157,7 @@ export const projects: Project[] = [
   {
     id: 'datax-ride',
     title: 'DataX – Ride Cancellation Prediction',
+    role: 'Individual Project',
     problem:
       'Cancellation prediction on a highly skewed dataset using a leakage-safe scikit-learn pipeline with location-specific cancellation-rate features.',
     tags: ['Python', 'scikit-learn', 'Pandas', 'Feature Engineering'],
