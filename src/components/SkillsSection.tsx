@@ -5,23 +5,17 @@ const SkillsSection = () => {
   return (
     <section className="py-20 px-6 md:px-12" id="skills">
       <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-10">Skills</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2">Skills</h2>
+        <p className="text-sm text-muted-foreground mb-10">Tools I use to build data and ML systems</p>
 
-        <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">
+        <dl className="divide-y divide-border max-w-3xl">
           {skillGroups.map(group => (
-            <div key={group.label} className="flex gap-4">
-              <dt className="shrink-0 w-40 pt-0.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <div key={group.label} className="py-4 flex flex-col sm:flex-row sm:gap-10">
+              <dt className="shrink-0 w-48 text-sm font-medium text-muted-foreground mb-2 sm:mb-0 sm:pt-0.5">
                 {group.label}
               </dt>
-              <dd className="flex flex-wrap gap-1.5">
-                {group.skills.map(skill => (
-                  <span
-                    key={skill}
-                    className="text-xs px-2.5 py-0.5 rounded-full border border-border text-muted-foreground hover:border-primary/40 hover:text-foreground transition-colors"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              <dd className="text-sm text-foreground leading-relaxed">
+                {group.skills.join(' · ')}
               </dd>
             </div>
           ))}
