@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle, AlertCircle, Loader2, ExternalLink } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Loader2, ExternalLink, Copy, Check } from 'lucide-react';
 import { identity } from '@/data/profile';
 
 type FormState = 'idle' | 'loading' | 'success' | 'error';
@@ -13,7 +13,7 @@ const MAILTO = `mailto:${identity.email}?subject=Hello%20from%20your%20portfolio
 const ContactSection = () => {
   return (
     <section className="py-20 px-6 md:px-12 bg-muted/30" id="contact">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left */}
           <div>
@@ -36,9 +36,40 @@ const ContactSection = () => {
 };
 
 function ContactRows() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(identity.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch { /* blocked */ }
+  };
+
   return (
     <div>
       <dl className="divide-y divide-border">
+        {/* Email */}
+        <div className="py-3.5 flex items-center justify-between gap-4">
+          <dt className="shrink-0 w-20 text-xs font-mono text-muted-foreground">Email</dt>
+          <dd className="flex-1 flex items-center justify-between gap-2 min-w-0">
+            <a
+              href={`mailto:${identity.email}`}
+              className="text-sm text-foreground truncate hover:text-primary transition-colors"
+            >
+              {identity.email}
+            </a>
+            <button
+              onClick={copyEmail}
+              aria-label="Copy email address"
+              className="shrink-0 inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {copied ? <Check size={12} className="text-emerald-500" /> : <Copy size={12} />}
+              <span className="sr-only sm:not-sr-only">{copied ? 'Copied' : 'Copy'}</span>
+            </button>
+          </dd>
+        </div>
+
         {/* GitHub */}
         <div className="py-3.5 flex items-center gap-4">
           <dt className="shrink-0 w-20 text-xs font-mono text-muted-foreground">GitHub</dt>
