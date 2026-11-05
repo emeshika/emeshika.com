@@ -17,6 +17,33 @@ export const identity = {
 };
 
 // ---------------------------------------------------------------------------
+// Education
+// ---------------------------------------------------------------------------
+
+export interface EducationEntry {
+  degree: string;
+  institution: string;
+  period: string;
+  subjects?: string;
+  grade?: string;
+}
+
+export const educationHistory: EducationEntry[] = [
+  {
+    degree: 'BSc (Hons) Information Technology — Data Science',
+    institution: 'Sri Lanka Institute of Information Technology (SLIIT)',
+    period: 'Jul 2023 – Present',
+  },
+  {
+    degree: 'G.C.E. Advanced Level — Physical Science Stream',
+    institution: 'H/ Vijayaba National School',
+    period: '2021',
+    subjects: 'Combined Mathematics · Chemistry · Physics',
+    grade: '3C',
+  },
+];
+
+// ---------------------------------------------------------------------------
 // Experience
 // ---------------------------------------------------------------------------
 
@@ -34,8 +61,8 @@ export const experiences: Experience[] = [
     role: 'Data Science Intern',
     company: 'Gamage Recruiters',
     companyFull: 'Gamage Recruiters (Pvt) Ltd',
-    period: 'Dec 2025 – Jun 2026',
-    type: 'Internship · 7 months',
+    period: 'Dec 2025 – May 2026',
+    type: 'Internship · 6 months',
     bullets: [
       'Led a team of interns designing and developing data-driven software solutions using Agile practices',
       'Built automated data-processing pipelines detecting duplicate records, logical redundancies, and structural issues in complex datasets',
@@ -63,10 +90,10 @@ export interface Research {
 }
 
 export const research: Research = {
-  title: 'Disaster Risk Routing System for Sabaragamuwa Province',
-  team: '4-member team · Final Year Research Project',
+  title: 'Multi-Hazard-Aware Emergency Logistics Route Optimization for Sabaragamuwa Province',
+  team: '4-member team',
   myRole: 'Component 2: Road Network Graph Construction',
-  institution: 'SLIIT · CoEAI Research Cluster',
+  institution: 'SLIIT',
   status: 'In Progress · 2026',
   description:
     'A multi-component system providing disaster-aware routing across Sabaragamuwa Province, Sri Lanka, using real flood and landslide risk data. Instead of a single "optimal" route, the system exposes all origin–destination routes with an aggregated risk score per route.',

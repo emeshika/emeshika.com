@@ -12,7 +12,7 @@ const ResearchSection = () => {
       <div className="container mx-auto relative z-10">
         <div className="flex flex-col gap-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Research <span className="text-gradient">/ FYP</span>
+            My <span className="text-gradient">Research</span>
           </h2>
           <div className="w-20 h-1 bg-web3-primary" />
         </div>

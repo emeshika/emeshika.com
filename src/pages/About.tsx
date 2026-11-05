@@ -1,9 +1,9 @@
 import React from 'react';
-import { Book, Code, Calendar, User, FileText, Briefcase } from 'lucide-react';
+import { Book, Code, User, Briefcase, GraduationCap } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
-import { identity, skillGroups, experiences, research } from '@/data/profile';
+import { identity, skillGroups, experiences, educationHistory } from '@/data/profile';
 
 const About = () => {
   return (
@@ -42,22 +42,34 @@ const About = () => {
                 </p>
 
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  I recently completed a Data Science internship at Gamage Recruiters (Pvt) Ltd (Dec 2025 – Jun 2026), where I built
+                  I recently completed a 6-month Data Science internship at Gamage Recruiters (Pvt) Ltd (Dec 2025 – May 2026), where I built
                   predictive models, automated reporting pipelines, and worked with recruitment data at scale.
                   I'm looking for roles in data science, ML engineering, and data analytics.
                 </p>
 
                 <div className="pt-2">
-                  <h3 className="text-xl font-semibold mb-4">Education</h3>
-                  <div className="bg-muted p-4 rounded-lg flex items-start gap-4">
-                    <div className="w-10 h-10 bg-web3-primary/20 rounded-full flex items-center justify-center shrink-0">
-                      <Book className="text-web3-primary" size={20} />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-medium">BSc (Hons) Information Technology — Data Science</h4>
-                      <p className="text-muted-foreground">Sri Lanka Institute of Information Technology (SLIIT)</p>
-                      <p className="text-sm text-muted-foreground mt-1">Jul 2023 – Present · CoEAI Research Cluster</p>
-                    </div>
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <GraduationCap className="text-web3-primary" size={20} /> Education
+                  </h3>
+                  <div className="relative pl-5 space-y-0 border-l-2 border-web3-primary/25">
+                    {educationHistory.map((entry, i) => (
+                      <div key={i} className="relative pb-5 last:pb-0">
+                        <div className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-web3-primary border-2 border-background" />
+                        <div className="bg-muted rounded-lg p-4 ml-3">
+                          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                            <h4 className="font-medium leading-snug">{entry.degree}</h4>
+                            <span className="text-xs text-web3-primary font-medium shrink-0">{entry.period}</span>
+                          </div>
+                          <p className="text-sm text-muted-foreground mt-0.5">{entry.institution}</p>
+                          {entry.subjects && (
+                            <p className="text-xs text-muted-foreground mt-1.5">
+                              {entry.subjects}
+                              {entry.grade && <span className="ml-1.5 text-web3-primary font-medium">· {entry.grade}</span>}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
 

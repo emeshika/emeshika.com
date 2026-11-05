@@ -65,11 +65,11 @@ export default {
                     ring: 'hsl(var(--sidebar-ring))'
                 },
                 web3: {
-                    dark: '#221F26',
+                    dark: '#050d1a',
                     light: '#FFFFFF',
-                    primary: '#8B5CF6',
-                    secondary: '#33C3F0',
-                    accent: '#1EAEDB'
+                    primary: '#2dd4bf',
+                    secondary: '#818cf8',
+                    accent: '#06b6d4'
                 }
             },
             fontFamily: {
@@ -125,7 +125,7 @@ export default {
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'web3-gradient': 'linear-gradient(90deg, #8B5CF6, #33C3F0)',
+                'web3-gradient': 'linear-gradient(90deg, #2dd4bf, #818cf8)',
             }
         }
     },

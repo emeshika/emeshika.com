@@ -3,7 +3,6 @@ import { ArrowRight, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Link } from 'react-router-dom';
 import { projects } from '@/data/profile';
 
 const featuredProjects = projects.filter(p => p.visible && p.category === 'featured');
@@ -103,10 +102,10 @@ const ProjectsSection = () => {
         )}
 
         <div className="flex justify-center">
-          <Button asChild variant="outline" className="border-web3-primary text-web3-primary hover:bg-web3-primary/20">
-            <Link to="/projects" className="flex items-center gap-2">
-              View All Projects <ArrowRight size={16} />
-            </Link>
+          <Button asChild variant="outline" className="border-web3-primary/50 text-web3-primary hover:bg-web3-primary/10">
+            <a href="https://github.com/emeshika" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              View All Projects on GitHub <ArrowRight size={16} />
+            </a>
           </Button>
         </div>
       </div>
