@@ -51,9 +51,9 @@ const Blog = () => {
             )}
 
             {filtered.length === 0 ? (
-              <div className="text-center py-20 text-muted-foreground">
-                <p className="text-lg mb-2">No posts yet.</p>
-                <p className="text-sm">Check back soon. Writing in progress.</p>
+              <div className="py-16">
+                <p className="text-sm text-muted-foreground">No posts yet. The first one is on its way.</p>
+                <Link to="/" className="inline-block mt-4 text-sm text-primary hover:underline">← Back to home</Link>
               </div>
             ) : (
               <ul className="divide-y divide-border max-w-2xl">

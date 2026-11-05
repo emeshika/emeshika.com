@@ -58,7 +58,7 @@ const ProjectsSection = () => {
         {/* Other — compact list */}
         {other.length > 0 && (
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-4">Other Projects</h3>
+            <h3 className="text-sm font-semibold text-muted-foreground mb-4">Other projects</h3>
             <ul className="divide-y divide-border">
               {other.map(p => (
                 <li key={p.id} className="py-4 flex items-start justify-between gap-4">

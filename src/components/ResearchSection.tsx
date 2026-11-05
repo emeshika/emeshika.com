@@ -14,7 +14,7 @@ const ResearchSection = () => {
               <h3 className="text-base md:text-lg font-semibold text-foreground leading-snug max-w-2xl">
                 {research.title}
               </h3>
-              <p className="text-sm text-primary mt-1">{research.myRole}</p>
+              <p className="text-sm text-muted-foreground font-medium mt-1">{research.myRole}</p>
               <p className="text-xs text-muted-foreground mt-0.5">{research.team} · {research.institution}</p>
             </div>
             <span className="shrink-0 text-xs font-mono text-muted-foreground border border-border rounded px-2 py-1 h-fit">
