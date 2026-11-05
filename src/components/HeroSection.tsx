@@ -9,10 +9,10 @@ const HeroSection = () => {
   return (
     <section className="relative w-full min-h-[92vh] flex flex-col justify-center pt-14 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] items-center gap-10 md:gap-16 py-16 animate-fade-in">
+        <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] items-center gap-8 md:gap-10 py-16 animate-fade-in">
 
           {/* Left — text */}
-          <div className="max-w-xl">
+          <div>
             {/* Availability indicator */}
             <div className="inline-flex items-center gap-2 text-sm text-muted-foreground mb-6">
               <span className="relative flex h-2 w-2">
@@ -71,24 +71,16 @@ const HeroSection = () => {
 
           {/* Right — photo */}
           <div className="flex justify-center md:justify-end order-first md:order-last">
-            <div className="relative w-48 md:w-80">
-              {/* Offset frame */}
-              <div
-                className="absolute inset-0 translate-x-2.5 translate-y-2.5 rounded-2xl border border-border"
-                aria-hidden="true"
+            <div className="w-48 md:w-72 overflow-hidden rounded-2xl border border-border" style={{ aspectRatio: '4/5' }}>
+              <img
+                src="/lovable-uploads/dp.jpg"
+                alt="Hirushi Emeshika, Data Science undergraduate at SLIIT"
+                width={288}
+                height={360}
+                className="w-full h-full object-cover object-top"
+                loading="eager"
+                fetchPriority="high"
               />
-              {/* Photo */}
-              <div className="relative overflow-hidden rounded-2xl border border-border" style={{ aspectRatio: '4/5' }}>
-                <img
-                  src="/lovable-uploads/dp.jpg"
-                  alt="Hirushi Emeshika, Data Science undergraduate at SLIIT"
-                  width={320}
-                  height={400}
-                  className="w-full h-full object-cover object-top"
-                  loading="eager"
-                  fetchPriority="high"
-                />
-              </div>
             </div>
           </div>
 
