@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
-import { getAllPosts } from '@/lib/blog';
 
 const NAV_LINKS = [
   { label: 'About', id: 'about' },
@@ -11,7 +10,7 @@ const NAV_LINKS = [
   { label: 'Projects', id: 'projects' },
 ];
 
-const hasBlogPosts = getAllPosts().length > 0;
+const NOTES_URL = 'https://app.gitbook.com/o/pUnQytAcy3IqtzDnPUnC/s/0FndmxzFFmyCwRJGQ8zO/getting-started/quickstart';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,7 +63,8 @@ const Navbar = () => {
               {l.label}
             </button>
           ))}
-          {hasBlogPosts && <Link to="/blog" className={linkClass}>Blog</Link>}
+          <Link to="/blog" className={linkClass}>Blog</Link>
+          <a href={NOTES_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>Notes</a>
           <button onClick={() => scrollTo('contact')} className={linkClass}>Contact</button>
           <button
             onClick={toggle}
@@ -112,9 +112,16 @@ const Navbar = () => {
                 {l.label}
               </button>
             ))}
-            {hasBlogPosts && (
-              <Link to="/blog" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Blog</Link>
-            )}
+            <Link to="/blog" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Blog</Link>
+            <a
+              href={NOTES_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              Notes ↗
+            </a>
             <button onClick={() => { scrollTo('contact'); }} className="text-left text-lg font-medium">Contact</button>
           </div>
         </div>
