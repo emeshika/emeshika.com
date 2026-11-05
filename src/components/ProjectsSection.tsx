@@ -9,20 +9,27 @@ import { Link } from 'react-router-dom';
 const projects = [
   {
     id: 1,
+    title: "Telecom Customer Churn & Revenue Analytics",
+    description: "An end-to-end data analytics project analyzing telecom customer behavior to predict churn and identify revenue opportunities. Features EDA, predictive modeling using Random Forest and XGBoost, and an interactive dashboard for business insights. Achieved high accuracy with key churn drivers identified.",
+    tags: ["Python", "scikit-learn", "XGBoost", "Pandas", "Matplotlib", "EDA"],
+    link: "https://github.com/emeshika"
+  },
+  {
+    id: 2,
     title: "Caregiver Management System",
     description: "A full-stack web application designed to streamline caregiver scheduling, payments, and client management. This system allows users to register caregivers, manage appointments, and track payments securely. It features user authentication, refund management, and a dynamic dashboard for admin users.",
     tags: ["React.js", "Express.js", "MongoDB"],
     link: "https://github.com/emeshika/CaregiverManagementSystem"
   },
   {
-    id: 2,
+    id: 3,
     title: "BudgetBuddy - Personal Finance Tracker (Mobile App)",
     description: "An Android mobile app developed in Kotlin that helps users track income, expenses, and budgets. Features include transaction categorization, dynamic pie charts, monthly budget setup, and alerts when nearing budget limits. It stores data locally using SharedPreferences and supports data export/import functionality.",
     tags: ["Kotlin", "Android", "Mobile Development"],
     link: "https://github.com/emeshika/FinanceTrackerApp"
   },
   {
-    id: 3,
+    id: 4,
     title: "Online Ticket Booking System",
     description: "A web-based solution for booking movie or event tickets with real-time seat availability. Users can register, browse shows, select seats, and make payments. The system ensures a smooth and user-friendly ticketing experience, integrating validations and confirmation receipts.",
     tags: ["PHP", "MySQL", "Bootstrap"],

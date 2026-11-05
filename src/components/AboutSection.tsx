@@ -68,7 +68,7 @@ const AboutSection = () => {
                 <Code className="text-web3-primary" size={24} />
               </div>
               <h3 className="text-lg font-semibold mb-2">Skills</h3>
-              <p className="text-muted-foreground">Data Analysis, Machine Learning Algorithms, Predictive Modeling, Data Visualization, Mobile App Development, UI/UX Design</p>
+              <p className="text-muted-foreground">Python, R, SQL, Machine Learning, Deep Learning, NLP, Data Visualization, Statistical Analysis, TensorFlow, scikit-learn</p>
             </CardContent>
           </Card>
           
@@ -79,7 +79,7 @@ const AboutSection = () => {
               </div>
               <h3 className="text-lg font-semibold mb-2">Experience</h3>
               <p className="text-muted-foreground">
-                Collaborated on academic projects using Git and Agile practices.
+                Academic research, data analytics projects, full-stack development, and mobile app projects using Git and Agile practices.
               </p>
             </CardContent>
           </Card>

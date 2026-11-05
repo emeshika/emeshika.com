@@ -105,10 +105,10 @@ const HeroSection = () => {
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-center md:text-left mt-4">
               @emeshika <br/>
-              Undergraduate | Data Scientist | ML & AI | Enthusiast
+              Data Science Undergraduate | ML & AI | Python · R · SQL | Data Visualization
             </p>
             <p className="text-lg md:text-2xl text-muted-foreground leading-relaxed text-center md:text-left mt-4">
-              Aspiring Data Scientist at SLIIT, combining coding, statistics, and machine learning to unlock insights from data, with a strong interest in AI, and data visualization.
+              Final-year Data Science student at SLIIT, passionate about turning raw data into meaningful insights using machine learning, statistical analysis, and interactive visualizations.
             </p>
           </div>
           {/* Avatar on the right */}

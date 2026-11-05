@@ -82,34 +82,76 @@ const About = () => {
                     <Code className="text-web3-primary" /> Programming
                   </h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>Python</li>
-                    <li>R</li>
-                    <li>SQL</li>
-                    <li>JavaScript</li>
+                    <li>Python (pandas, NumPy, scikit-learn)</li>
+                    <li>R (ggplot2, dplyr, tidyr)</li>
+                    <li>SQL (MySQL, PostgreSQL)</li>
+                    <li>JavaScript / TypeScript</li>
+                    <li>Kotlin (Android)</li>
                   </ul>
                 </div>
-                
+
                 <div className="bg-muted p-6 rounded-lg">
                   <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <FileText className="text-web3-primary" /> Data Analysis
+                    <FileText className="text-web3-primary" /> Data Science
                   </h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>Statistical Analysis</li>
-                    <li>Data Visualization</li>
-                    <li>Exploratory Data Analysis</li>
-                    <li>Feature Engineering</li>
+                    <li>Exploratory Data Analysis (EDA)</li>
+                    <li>Statistical Analysis & Hypothesis Testing</li>
+                    <li>Feature Engineering & Selection</li>
+                    <li>Data Cleaning & Preprocessing</li>
+                    <li>Data Visualization (Matplotlib, Seaborn, Plotly)</li>
                   </ul>
                 </div>
-                
+
                 <div className="bg-muted p-6 rounded-lg">
                   <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <User className="text-web3-primary" /> Machine Learning
+                    <User className="text-web3-primary" /> Machine Learning & AI
                   </h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>Supervised Learning</li>
-                    <li>Unsupervised Learning</li>
-                    <li>Neural Networks</li>
-                    <li>Model Evaluation</li>
+                    <li>Supervised & Unsupervised Learning</li>
+                    <li>Deep Learning (TensorFlow, Keras)</li>
+                    <li>Natural Language Processing (NLP)</li>
+                    <li>Model Evaluation & Optimization</li>
+                    <li>Time Series Analysis</li>
+                  </ul>
+                </div>
+
+                <div className="bg-muted p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <Calendar className="text-web3-primary" /> Tools & Platforms
+                  </h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>Jupyter Notebook / Google Colab</li>
+                    <li>Git & GitHub</li>
+                    <li>Power BI / Tableau</li>
+                    <li>MongoDB / MySQL</li>
+                    <li>VS Code / Android Studio</li>
+                  </ul>
+                </div>
+
+                <div className="bg-muted p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <Book className="text-web3-primary" /> Soft Skills
+                  </h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>Problem Solving & Critical Thinking</li>
+                    <li>Team Collaboration (Agile / Scrum)</li>
+                    <li>Data Storytelling & Presentation</li>
+                    <li>Research & Documentation</li>
+                    <li>Adaptability & Continuous Learning</li>
+                  </ul>
+                </div>
+
+                <div className="bg-muted p-6 rounded-lg">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <Code className="text-web3-primary" /> Web Development
+                  </h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>React.js / Node.js</li>
+                    <li>Express.js / REST APIs</li>
+                    <li>PHP / Bootstrap</li>
+                    <li>Tailwind CSS</li>
+                    <li>Full-Stack Development</li>
                   </ul>
                 </div>
               </div>
