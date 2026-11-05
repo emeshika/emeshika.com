@@ -21,7 +21,7 @@ const AboutSection = () => {
           <div className="lg:col-span-3 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Final-year Information Technology student at SLIIT, specializing in Data Science. My research group is building
-              a multi-hazard-aware emergency logistics routing system for Sabaragamuwa Province — I construct the road network
+              a multi-hazard-aware emergency logistics routing system for Sabaragamuwa Province. I construct the road network
               graph from OpenStreetMap data, attach per-segment flood and landslide risk scores, and implement Customizable
               Contraction Hierarchies so hazard weights update in real time as conditions change.
             </p>

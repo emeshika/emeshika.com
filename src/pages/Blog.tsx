@@ -53,7 +53,7 @@ const Blog = () => {
             {filtered.length === 0 ? (
               <div className="text-center py-20 text-muted-foreground">
                 <p className="text-lg mb-2">No posts yet.</p>
-                <p className="text-sm">Check back soon — writing in progress.</p>
+                <p className="text-sm">Check back soon. Writing in progress.</p>
               </div>
             ) : (
               <ul className="divide-y divide-border max-w-2xl">

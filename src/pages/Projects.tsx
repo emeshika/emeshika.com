@@ -19,7 +19,7 @@ const Projects = () => {
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold mb-1">Projects</h1>
                 <p className="text-muted-foreground text-sm">
-                  Data science, ML, and software engineering — internship, research, and university work.
+                  Data science, ML, and software engineering: internship, research, and university work.
                 </p>
               </div>
               <a
