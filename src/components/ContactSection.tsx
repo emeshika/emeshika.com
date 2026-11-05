@@ -19,7 +19,6 @@ const ContactSection = () => {
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Contact</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              I'm currently open to data science, machine learning and data engineering roles.
               The fastest way to reach me is by email.
             </p>
           </div>
@@ -98,11 +97,6 @@ function ContactRows() {
           </dd>
         </div>
 
-        {/* Location */}
-        <div className="py-3.5 flex items-center gap-4">
-          <dt className="shrink-0 w-20 text-xs font-mono text-muted-foreground">Location</dt>
-          <dd className="text-sm text-foreground">{identity.location}</dd>
-        </div>
       </dl>
 
       <a

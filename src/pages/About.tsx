@@ -27,16 +27,10 @@ const About = () => {
 
               <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  Final-year Information Technology student at SLIIT, specializing in Data Science. My research group
-                  is building a multi-hazard-aware emergency logistics routing system for Sabaragamuwa Province. I construct
-                  the road network graph from OpenStreetMap data, attach per-segment flood and landslide risk scores, and
-                  implement Customizable Contraction Hierarchies so hazard weights update in real time.
-                </p>
-                <p>
-                  I completed a 6-month internship at{' '}
-                  <span className="text-foreground font-medium">Gamage Recruiters (Pvt) Ltd</span> (Dec 2025 – Jun 2026),
-                  where I led a team of interns building data pipelines and ML models: duplicate-detection systems,
-                  SMOTE-based handling of imbalanced datasets, and time-series forecasting for demand planning.
+                  Final-year Data Science undergraduate at SLIIT and part of the CoEAI research cluster.
+                  I'm most interested in building practical ML systems: cleaning messy real-world data, engineering
+                  features that hold up outside a notebook, and taking models from experiments to reproducible
+                  pipelines. I'm looking for data science, machine learning and data engineering roles.
                 </p>
 
                 <div className="pt-4">
@@ -48,9 +42,6 @@ const About = () => {
                         <p className="font-medium text-sm text-foreground">{entry.degree}</p>
                         <p className="text-xs text-muted-foreground mt-0.5">{entry.institution}</p>
                         <p className="text-xs font-mono text-primary mt-0.5">{entry.period}</p>
-                        {entry.subjects && (
-                          <p className="text-xs text-muted-foreground mt-1">{entry.subjects}</p>
-                        )}
                       </li>
                     ))}
                   </ol>

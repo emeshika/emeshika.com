@@ -32,11 +32,6 @@ export const educationHistory: EducationEntry[] = [
     institution: 'Sri Lanka Institute of Information Technology (SLIIT)',
     period: 'Jul 2023 – Present',
   },
-  {
-    degree: 'G.C.E. Advanced Level — Physical Science Stream',
-    institution: 'H/ Vijayaba National School',
-    period: '2021',
-  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -219,24 +214,6 @@ export const projects: Project[] = [
     visible: true,
     category: 'other',
   },
-  {
-    id: 'moviebuddy',
-    title: 'MovieBuddy',
-    problem: 'Android app for browsing and saving movies.',
-    tags: ['Kotlin', 'Android'],
-    repoUrl: 'https://github.com/emeshika/MovieBuddy_MobileApp',
-    visible: true,
-    category: 'other',
-  },
-  {
-    id: 'ticket-booking',
-    title: 'Online Ticket Booking System',
-    problem: 'PHP/MySQL web app for event ticket booking with real-time seat selection and payment confirmation.',
-    tags: ['PHP', 'MySQL', 'Bootstrap'],
-    repoUrl: 'https://github.com/emeshika/BookingTickets',
-    visible: true,
-    category: 'other',
-  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -252,12 +229,11 @@ export const skillGroups: SkillGroup[] = [
   { label: 'ML & Data Science', skills: ['scikit-learn', 'TensorFlow', 'Keras', 'PyTorch', 'NumPy', 'Pandas', 'Time-Series Forecasting', 'SMOTE'] },
   { label: 'Data Engineering & MLOps', skills: ['Apache Spark', 'Kafka', 'Airflow', 'MLflow'] },
   { label: 'NLP', skills: ['NLTK', 'Sentence-BERT', 'TF-IDF', 'Cosine Similarity'] },
-  { label: 'Programming', skills: ['Python', 'SQL', 'Java', 'JavaScript', 'PHP', 'HTML/CSS'] },
+  { label: 'Programming', skills: ['Python', 'SQL', 'Java', 'JavaScript'] },
   { label: 'Analytics & BI', skills: ['Power BI', 'Advanced Excel'] },
   { label: 'Databases', skills: ['PostgreSQL', 'MySQL', 'MS SQL Server', 'MongoDB Atlas'] },
   { label: 'Cloud', skills: ['Microsoft Azure', 'Azure HDInsight', 'Azure Databricks', 'AWS S3'] },
-  { label: 'Web & APIs', skills: ['FastAPI', 'Flask', 'Spring Boot', 'React.js', 'Node.js', 'Express.js', 'REST', 'WebSockets'] },
-  { label: 'Tools', skills: ['Git', 'GitHub', 'Postman', 'VS Code', 'Streamlit'] },
+  { label: 'Web & APIs', skills: ['FastAPI', 'Flask', 'REST APIs', 'WebSockets'] },
 ];
 
 // ---------------------------------------------------------------------------
@@ -276,5 +252,4 @@ export const certifications: Certification[] = [
   { name: 'Configure Azure Blob Storage', issuer: 'Microsoft' },
   { name: 'Cloud Practitioner', issuer: 'AWS SimuLearn' },
   { name: 'Introduction to Amazon S3', issuer: 'AWS' },
-  { name: 'Python for Beginners', issuer: 'CODL' },
 ];

@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
+import { getAllPosts } from '@/lib/blog';
 
 const NAV_LINKS = [
   { label: 'About', id: 'about' },
   { label: 'Experience', id: 'experience' },
   { label: 'Research', id: 'research' },
   { label: 'Projects', id: 'projects' },
-  { label: 'Skills', id: 'skills' },
 ];
+
+const hasBlogPosts = getAllPosts().length > 0;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,15 +64,7 @@ const Navbar = () => {
               {l.label}
             </button>
           ))}
-          <Link to="/blog" className={linkClass}>Blog</Link>
-          <a
-            href="https://app.gitbook.com/o/pUnQytAcy3IqtzDnPUnC/s/0FndmxzFFmyCwRJGQ8zO/getting-started/quickstart"
-            className={linkClass}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Notes
-          </a>
+          {hasBlogPosts && <Link to="/blog" className={linkClass}>Blog</Link>}
           <button onClick={() => scrollTo('contact')} className={linkClass}>Contact</button>
           <button
             onClick={toggle}
@@ -118,16 +112,9 @@ const Navbar = () => {
                 {l.label}
               </button>
             ))}
-            <Link to="/blog" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Blog</Link>
-            <a
-              href="https://app.gitbook.com/o/pUnQytAcy3IqtzDnPUnC/s/0FndmxzFFmyCwRJGQ8zO/getting-started/quickstart"
-              className="text-lg font-medium"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-            >
-              Notes ↗
-            </a>
+            {hasBlogPosts && (
+              <Link to="/blog" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Blog</Link>
+            )}
             <button onClick={() => { scrollTo('contact'); }} className="text-left text-lg font-medium">Contact</button>
           </div>
         </div>
