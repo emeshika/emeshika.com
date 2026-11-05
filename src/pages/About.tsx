@@ -1,15 +1,15 @@
-
 import React from 'react';
+import { Book, Code, Calendar, User, FileText, Briefcase } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Book, Code, Calendar, User, FileText } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
+import { identity, skillGroups, experiences, research } from '@/data/profile';
 
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-1">
         <section className="py-20 px-6 md:px-12 bg-grid">
           <div className="container mx-auto">
@@ -17,149 +17,88 @@ const About = () => {
               <h1 className="text-4xl md:text-5xl font-bold">
                 About <span className="text-gradient">Me</span>
               </h1>
-              <div className="w-20 h-1 bg-web3-primary"></div>
+              <div className="w-20 h-1 bg-web3-primary" />
             </div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8">
               <div>
                 <div className="relative">
-                  <div className="absolute -inset-4 rounded-lg bg-web3-gradient opacity-50 blur-lg"></div>
+                  <div className="absolute -inset-4 rounded-lg bg-web3-gradient opacity-50 blur-lg" />
                   <div className="relative rounded-lg overflow-hidden aspect-square bg-muted w-full max-w-md">
-                    <img 
-                      src="/lovable-uploads/dp.jpg" 
-                      alt="Hirushi Emeshika Profile" 
+                    <img
+                      src="/lovable-uploads/dp.jpg"
+                      alt={`${identity.name} profile photo`}
                       className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
               </div>
-              
+
               <div className="space-y-6">
-                <p className="text-lg">
-                  Hello! I'm Hirushi Emeshika, a dedicated and enthusiastic Data Science undergraduate at the Sri Lanka Institute of Information Technology (SLIIT). 
-                  I am deeply passionate about uncovering patterns in data, extracting actionable insights, and developing intelligent solutions that make a real-world impact.
-                </p>
-                
-                <p className="text-lg">
-                  With a strong foundation in statistical analysis, machine learning, data visualization, and programming, I thrive on solving complex, data-driven problems. 
-                  I enjoy turning raw, unstructured data into clear, valuable narratives through intuitive visualizations and models that speak to both technical and non-technical audiences.
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  I'm a third-year BSc (Hons) IT Data Science student at SLIIT, affiliated with the Center of Excellence in AI (CoEAI).
+                  My final-year project focuses on disaster risk routing — specifically constructing the road network graph for Sabaragamuwa Province
+                  using OpenStreetMap and graph-based algorithms.
                 </p>
 
-                <p className="text-lg">
-                  Throughout my academic journey, I have engaged in a variety of hands-on projects — from developing full-stack applications to implementing machine 
-                  learning pipelines — which have strengthened my practical skills and reinforced my commitment to real-world problem solving.
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  I recently completed a Data Science internship at Gamage Recruiters (Pvt) Ltd (Dec 2025 – Jun 2026), where I built
+                  predictive models, automated reporting pipelines, and worked with recruitment data at scale.
+                  I'm looking for roles in data science, ML engineering, and data analytics.
                 </p>
 
-                <p className="text-lg">
-                  I'm always eager to explore emerging technologies in AI, big data, and analytics, and I believe in lifelong learning to stay ahead in this fast-evolving field. 
-                  Whether working independently or collaborating within a team, I bring creativity, curiosity, and a problem-solving mindset to every challenge I tackle
-                </p>
-                
-                <div className="pt-4">
+                <div className="pt-2">
                   <h3 className="text-xl font-semibold mb-4">Education</h3>
-                  <div className="bg-muted p-4 rounded-lg">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-web3-primary/20 rounded-full flex items-center justify-center shrink-0">
-                        <Book className="text-web3-primary" size={20} />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-medium">BSc in Data Science</h4>
-                        <p className="text-muted-foreground">Sri Lanka Institute of Information Technology (SLIIT)</p>
-                        <p className="text-sm text-muted-foreground mt-1">2022 - Present</p>
-                      </div>
+                  <div className="bg-muted p-4 rounded-lg flex items-start gap-4">
+                    <div className="w-10 h-10 bg-web3-primary/20 rounded-full flex items-center justify-center shrink-0">
+                      <Book className="text-web3-primary" size={20} />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-medium">BSc (Hons) Information Technology — Data Science</h4>
+                      <p className="text-muted-foreground">Sri Lanka Institute of Information Technology (SLIIT)</p>
+                      <p className="text-sm text-muted-foreground mt-1">Jul 2023 – Present · CoEAI Research Cluster</p>
                     </div>
                   </div>
                 </div>
+
+                <div className="pt-2">
+                  <h3 className="text-xl font-semibold mb-4">Experience</h3>
+                  {experiences.map(exp => (
+                    <div key={exp.id} className="bg-muted p-4 rounded-lg flex items-start gap-4">
+                      <div className="w-10 h-10 bg-web3-primary/20 rounded-full flex items-center justify-center shrink-0">
+                        <Briefcase className="text-web3-primary" size={20} />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-medium">{exp.role}</h4>
+                        <p className="text-muted-foreground">{exp.company}</p>
+                        <p className="text-sm text-muted-foreground mt-1">{exp.period} · {exp.type}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-            
+
+            {/* Skills */}
             <div className="mt-20">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8">Skills & Expertise</h2>
-              
+              <h2 className="text-2xl md:text-3xl font-bold mb-8">Skills</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div className="bg-muted p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <Code className="text-web3-primary" /> Programming
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>Python (pandas, NumPy, scikit-learn)</li>
-                    <li>R (ggplot2, dplyr, tidyr)</li>
-                    <li>SQL (MySQL, PostgreSQL)</li>
-                    <li>JavaScript / TypeScript</li>
-                    <li>Kotlin (Android)</li>
-                  </ul>
-                </div>
-
-                <div className="bg-muted p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <FileText className="text-web3-primary" /> Data Science
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>Exploratory Data Analysis (EDA)</li>
-                    <li>Statistical Analysis & Hypothesis Testing</li>
-                    <li>Feature Engineering & Selection</li>
-                    <li>Data Cleaning & Preprocessing</li>
-                    <li>Data Visualization (Matplotlib, Seaborn, Plotly)</li>
-                  </ul>
-                </div>
-
-                <div className="bg-muted p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <User className="text-web3-primary" /> Machine Learning & AI
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>Supervised & Unsupervised Learning</li>
-                    <li>Deep Learning (TensorFlow, Keras)</li>
-                    <li>Natural Language Processing (NLP)</li>
-                    <li>Model Evaluation & Optimization</li>
-                    <li>Time Series Analysis</li>
-                  </ul>
-                </div>
-
-                <div className="bg-muted p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <Calendar className="text-web3-primary" /> Tools & Platforms
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>Jupyter Notebook / Google Colab</li>
-                    <li>Git & GitHub</li>
-                    <li>Power BI / Tableau</li>
-                    <li>MongoDB / MySQL</li>
-                    <li>VS Code / Android Studio</li>
-                  </ul>
-                </div>
-
-                <div className="bg-muted p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <Book className="text-web3-primary" /> Soft Skills
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>Problem Solving & Critical Thinking</li>
-                    <li>Team Collaboration (Agile / Scrum)</li>
-                    <li>Data Storytelling & Presentation</li>
-                    <li>Research & Documentation</li>
-                    <li>Adaptability & Continuous Learning</li>
-                  </ul>
-                </div>
-
-                <div className="bg-muted p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <Code className="text-web3-primary" /> Web Development
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>React.js / Node.js</li>
-                    <li>Express.js / REST APIs</li>
-                    <li>PHP / Bootstrap</li>
-                    <li>Tailwind CSS</li>
-                    <li>Full-Stack Development</li>
-                  </ul>
-                </div>
+                {skillGroups.map(group => (
+                  <div key={group.label} className="bg-muted p-6 rounded-lg">
+                    <h3 className="text-base font-semibold mb-3 text-foreground">{group.label}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {group.skills.map(skill => (
+                        <Badge key={skill} variant="secondary" className="text-xs font-normal">{skill}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );
