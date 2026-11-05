@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle, AlertCircle, Loader2, Copy, Check, ExternalLink } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Loader2, ExternalLink } from 'lucide-react';
 import { identity } from '@/data/profile';
 
 type FormState = 'idle' | 'loading' | 'success' | 'error';
@@ -36,35 +36,9 @@ const ContactSection = () => {
 };
 
 function ContactRows() {
-  const [copied, setCopied] = useState(false);
-
-  const copyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(identity.email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch { /* blocked */ }
-  };
-
   return (
     <div>
       <dl className="divide-y divide-border">
-        {/* Email */}
-        <div className="py-3.5 flex items-center justify-between gap-4">
-          <dt className="shrink-0 w-20 text-xs font-mono text-muted-foreground">Email</dt>
-          <dd className="flex-1 flex items-center justify-between gap-2 min-w-0">
-            <span className="text-sm text-foreground truncate">{identity.email}</span>
-            <button
-              onClick={copyEmail}
-              aria-label="Copy email address"
-              className="shrink-0 inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {copied ? <Check size={12} className="text-emerald-500" /> : <Copy size={12} />}
-              <span className="sr-only sm:not-sr-only">{copied ? 'Copied' : 'Copy'}</span>
-            </button>
-          </dd>
-        </div>
-
         {/* GitHub */}
         <div className="py-3.5 flex items-center gap-4">
           <dt className="shrink-0 w-20 text-xs font-mono text-muted-foreground">GitHub</dt>
